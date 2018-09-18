@@ -1,18 +1,8 @@
 ---
-layout: default
+layout: home
+titles:
+  en: Blog
+  zh: 博客
+  zh-Hans: 博客
+  zh-Hant: 博客
 ---
-
-<div class="home">
-
-  
-  <ul class="post-list">
-    {% for post in site.posts %}
-     <a href="{{ post.url | prepend: site.baseurl }}">
-     
-     <li class="post-box">
-         <span class="post-meta"><strong>{{ post.date | date: "%-d" }}</strong><br />{{ post.date | date: "%b" }}</span>
-         <h2 class="post-link">{{ post.title }}</h2>
-      </li></a>
-    {% endfor %}
-  </ul>
-</div>
