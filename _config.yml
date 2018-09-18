@@ -7,18 +7,17 @@
 
 # Site settings
 title: Zen
-tagline: "<a target='_blank' href='https://en.wikipedia.org/wiki/Yudhishthira'>I'm the eldest.</a> I don't lie, I never will!"
+tagline: "&nbsp;" # <a target='_blank' href='https://en.wikipedia.org/wiki/Yudhishthira'>I'm the eldest.</a> I don't lie, I never will!
 picture: yudish.jpg #keep a 100x100 image inside images folder.
-email: hello@email.com
-description: > # this means to ignore newlines until "baseurl:"
-  Yudish is a minimal Jekyll theme for content oriented websites with less distractions.
+email: muhzaini30@gmail.com
+description: '' # > this means to ignore newlines until "baseurl:" Yudish is a minimal Jekyll theme for content oriented websites with less distractions.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://blog2.muhammadzaini.com" # the base hostname & protocol for your site
 brand-color: '#e74c3c'
-permalink: ':title/'
+permalink: pretty
 
 # Footer
-credits: webjeda #credits on the footer
+credits: Zen #credits on the footer
 version: 1.0
 
 # Build settings
@@ -30,8 +29,8 @@ highlighter: rouge
 sass:
   style: compressed
   
-disqus-shortname: webjeda-sample
-analytics: UA-83979019-1
+disqus-shortname: mzaini30
+analytics: # UA-83979019-1
 
 include: [_pages]
 
