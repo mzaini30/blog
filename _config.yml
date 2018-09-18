@@ -13,7 +13,7 @@
 
 text_color_theme: default #eg: default | dark | forest | ocean | chocolate | orange
 ## Base settings ##
-# url:  #the base hostname & protocol for your site e.g. https://www.someone.com
+url: 'http://blog2.muhammadzaini.com' #the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl: '' # /programming/
 title: Zen
 description: > #this means to ignore newlines until "nav_lists:"
@@ -123,7 +123,7 @@ exclude:
   - /vendor
 
 ## Plugins ##
-plugins:
+plugins_dir:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-paginate
