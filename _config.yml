@@ -12,8 +12,8 @@ picture: yudish.jpg #keep a 100x100 image inside images folder.
 email: hello@email.com
 description: > # this means to ignore newlines until "baseurl:"
   Yudish is a minimal Jekyll theme for content oriented websites with less distractions.
-baseurl: "/yudish" # the subpath of your site, e.g. /blog
-url: "http://webjeda.com" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://blog2.muhammadzaini.com" # the base hostname & protocol for your site
 brand-color: '#e74c3c'
 permalink: ':title/'
 
@@ -61,4 +61,5 @@ prose:
     - /_includes
 
 
-gems: [jekyll-paginate, jekyll-seo-tag]
+# gems: [jekyll-paginate, jekyll-seo-tag]
+gems: [jekyll-paginate]
