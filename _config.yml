@@ -1,8 +1,8 @@
 # Site settings 配置站点
-title: 'your awesome title'
-description: 'your web description'
-keywords: 'your web keywords, another keywords'
-url: 'https://abc.github.io' # your host
+title: 'Zen'
+description: ''
+keywords: ''
+url: 'http://muhammadzaini.com/blog' # your host
 
 # nav 中文字符空格：&emsp;
 nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
@@ -14,26 +14,26 @@ nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
 
 # 博主
 author: true
-name: 'your awesome name'
-NickName: 'your awesome nickname'
-webtitle: 'your awesome webtitle'
-bio: 'your awesome bio'
+name: 'Zen'
+NickName: 'Zen'
+webtitle: 'Zen'
+bio: ''
 about: true
-aboutyou: 'your introduction'
+aboutyou: ''
 portraits: '/assets/profile.jpeg' # your portraits image file path
 
 # SNS
 SNS: true
 SNS-icon: #['facebook', 'weibo', 'QQ', 'github', 'Dribbble', 'twitter', 'instagram', 'weixin']
-  mail: 'mailto:abc@gmail.com'
+  mail: 'muhzaini30@gmail.com'
   weixin: '' # your wechat image file path
   QQ: '' # your QQ image file path
   weibo: ''
-  instagram: ''
-  twitter: ''
-  github: ''
+  instagram: 'mzaini30'
+  twitter: 'mzaini30'
+  github: 'mzaini30'
   Dribbble: ''
-  facebook: ''
+  facebook: 'mzaini30'
   Google: ''
   zhihu: ''
   juejin: ''
@@ -63,7 +63,7 @@ friends:
 # 评论 最佳体验 在disqus、livere和Gitment之间三选一
 # disqus 评论
 disqus: false
-disqus_url: '' # https://abc.disqus.com/embed.js
+disqus_url: 'https://mzaini30.disqus.com/embed.js' # https://abc.disqus.com/embed.js
 # 来必力评论
 livere: true
 livere_uid: 'MTAyMC8zNDI2OS8xMDgwNg==' # MTAyMC8zNDI2OS8xMDgwNg==
