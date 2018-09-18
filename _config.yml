@@ -1,118 +1,64 @@
-# Base blog settings
-baseurl                      : "" # /dactl/ - the subpath of your site,                         # e.g. /blog/
-                              # set to '' in case of hosting on GitHub
-url                          : "http://localhost:4000" # the base hostname & protocol for your site
-                                  # `http://<username>.github.io` - for GitHub
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-blog:
-  title                      : dactl
-  description                  : >
-                               this should contain a proper description
+# Site settings
+title: Yudish Tira
+tagline: "<a target='_blank' href='https://en.wikipedia.org/wiki/Yudhishthira'>I'm the eldest.</a> I don't lie, I never will!"
+picture: yudish.jpg #keep a 100x100 image inside images folder.
+email: hello@email.com
+description: > # this means to ignore newlines until "baseurl:"
+  Yudish is a minimal Jekyll theme for content oriented websites with less distractions.
+baseurl: "/yudish" # the subpath of your site, e.g. /blog
+url: "http://webjeda.com" # the base hostname & protocol for your site
+brand-color: '#e74c3c'
+permalink: ':title/'
 
-# Layout configuration
-  logo_path                  : "assets/img/dactl.svg" # path to logo file
-  search_path                : # "yourgitusername.github.io"
-                               # needed for searchbox in archive page
-  hero_layout                : true # turn on hero layout for blog and posts
-  hero_placeholder           : "assets/img/generic_hero.jpg" # placeholder for hero image
-  excerpts                   : true # show excerpts instead of full post content on blog page
-  inline_footnotes           : true # enable/disable barefoot inline footnotes
-  titles_only                : false # show post titles only on main blog page
+# Footer
+credits: webjeda #credits on the footer
+version: 1.0
 
-# Fonts
-  font                       : '"Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif'
-  load_google_fonts          : 'Rubik:400,400italic,700,700italic'
-
-
-# Author info
-author:
-  fullname                  : Your Name
-  rss                       : true # generate RSS feed and show it's icon in header
-  mail                      : your@email.com # change to your e-mail address
-  twitter                   : twitter-user-name
-  github                    : github-user-name
-  youtube                   : youtube-user-name
-  stackoverflow             : stackoverflow-user-name
-  disqus                    : dactl # your disqus site name
-  google_analytics          : # 'UA-XXXXXXXX-X'
-  photo                     : "uploads/me2.png"
-  photo2x                   : "uploads/me.png"
-
-
-
-## !!
-## Advanced blog settings
-## You should not change anything here unless you know what you are doing
-
-# Gems
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-
-# Permalinks
-permalink                    : posts/:slug
-
-# Posts
-excerpt_separator            : <!–-break-–>
-
-# Pagination
-paginate                     : 5
-paginate_path                : '/page-:num/'
-
-# Tags
-collections:
-  my_tags:
-    output: true
-    permalink: /tag/:slug/
-defaults:
-  -
-    scope:
-      path: ""
-      type: my_tags
-    values:
-      layout: blog-by-tag
-
-# Handling Reading
-exclude                    : ["README.md", "README.html"]
-
-# https://github.com/jekyll/jekyll/issues/4619
-# Markdown and highlighter settings
+# Build settings
 markdown: kramdown
-# !github-pages! mandatory › https://help.github.com/articles/using-jekyll-with-pages/#configuration-settings-you-cannot-change
-# Since Jekyll 3 the default highlighter is Rouge (replaced Pygments.rb in v44)
+kramdown:
+  input: GFM
 highlighter: rouge
 
-# More › http://kramdown.gettalong.org/quickref.html
-# Options › http://kramdown.gettalong.org/options.html
-kramdown:
-  input:          GFM
-  # https://github.com/jekyll/jekyll/pull/4090
-  syntax_highlighter: rouge
-
-  # Rouge Highlighter in Kramdown › http://kramdown.gettalong.org/syntax_highlighter/rouge.html
-  # span, block element options fall back to global
-  syntax_highlighter_opts:
-    # Rouge Options › https://github.com/jneen/rouge#full-options
-    # css_class: 'highlight'
-    #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
-
-# Sass settings
 sass:
-  sass_dir                : _sass
-  style                   : compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style: compressed
+  
+disqus-shortname: webjeda-sample
+analytics: UA-83979019-1
 
-# HTML Compression
-# - http://jch.penibelst.de/
+include: [_pages]
+
+
+
+#compress.html
 compress_html:
-  clippings               : all
-  endings                 : all
-  comments                : ["<!-- ", " -->"]
-  blanklines              : true
-  profile                 : false
+  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
+  comments: ["<!-- ", " -->"]
+  endings: [all]
   ignore:
-  envs                    : [local]
+    envs: [local]
+  blanklines: false
+  profile: false
+  startings: []
+  
+  
+prose:
+  rooturl: ''
+  siteurl: 'http://prose.github.io/starter/'
+  relativeLinks: 'http://prose.github.io/starter/links.jsonp'
+  media: 'images'
+  ignore:
+    - index.md
+    - _config.yml
+    - /_layouts
+    - /_includes
+
+
+gems: [jekyll-paginate, jekyll-seo-tag]
