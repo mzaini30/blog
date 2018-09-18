@@ -1,5 +1,5 @@
-{%- include snippets/get-sources.html -%}
-{%- assign _sources = __return -%}
+{% include snippets/get-sources.html %}
+{% assign _sources = __return %}
 <script>
   (function() {
     function scrollAnimateTo(destination, duration, callback) {
@@ -23,7 +23,7 @@
 
     $articleContent.children('h1, h2, h3, h4, h5, h6').each(function() {
       $this = $(this);
-      $this.append($('<a class="anchor" aria-hidden="true"></a>').html('{%- include icon/link.svg -%}'));
+      $this.append($('<a class="anchor" aria-hidden="true"></a>').html('{% include icon/link.svg %}'));
     });
     $articleContent.on('click', '.anchor', function() {
       window.scrollTopAnchor('#' + $(this).parent().attr('id'));

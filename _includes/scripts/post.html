@@ -1,6 +1,6 @@
-{%- assign _toc_selectors = site.toc.selectors | default: site.data.variables.default.toc.selectors -%}
-{%- include snippets/get-sources.html -%}
-{%- assign _sources = __return -%}
+{% assign _toc_selectors = site.toc.selectors | default: site.data.variables.default.toc.selectors %}
+{% include snippets/get-sources.html %}
+{% assign _sources = __return %}
 <script>
   window.Lazyload.js('{{ _sources.jquery }}', function() {
     var $window = $(window);
@@ -135,7 +135,7 @@
     }, 1000);
   });
 
-  {%- if page.key and site.leancloud.app_id and site.leancloud.app_key and site.leancloud.app_class and jekyll.environment != "development" -%}
+  {% if page.key and site.leancloud.app_id and site.leancloud.app_key and site.leancloud.app_class and jekyll.environment != "development" %}
   window.Lazyload.js(['{{ _sources.jquery }}', '{{ _sources.leancloud_js_sdk }}'], function() {
     AV.init({
       appId: '{{ site.leancloud.app_id }}',
@@ -179,5 +179,5 @@
       }
     });
   });
-  {%- endif -%}
+  {% endif %}
 </script>
