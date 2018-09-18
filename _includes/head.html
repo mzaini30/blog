@@ -5,6 +5,8 @@
  
   <!-- {## seo ##} -->
 
+  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+
   <style>
           {% capture include_to_scssify %}
           {% include main.scss %}
