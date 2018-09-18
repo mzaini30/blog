@@ -65,14 +65,14 @@ friends:
 disqus: false
 disqus_url: 'https://mzaini30.disqus.com/embed.js' # https://abc.disqus.com/embed.js
 # 来必力评论
-livere: true
+livere: false
 livere_uid: 'MTAyMC8zNDI2OS8xMDgwNg==' # MTAyMC8zNDI2OS8xMDgwNg==
 # Gitment评论 OAuth Application
-Gitment: false
-Gitment_owner: ''  # github用户名
-Gitment_repo: ''  # github博客存放的仓库名
-client_id: ''  # 注册 OAuth Application 后获得的 client_id
-client_secret: ''  # 注册 OAuth Application 后获得的 client_secret
+Gitment: true
+Gitment_owner: 'mzaini30'  # github用户名
+Gitment_repo: 'blog'  # github博客存放的仓库名
+client_id: 'ea3fb67b62f68502046c'  # 注册 OAuth Application 后获得的 client_id
+client_secret: '5d981a527957f1b5f48956f524b084fbb6e56060'  # 注册 OAuth Application 后获得的 client_secret
 
 # Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
 social-share: true
