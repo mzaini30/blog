@@ -20,3 +20,6 @@ markdown: kramdown
 
 # lokasi blog di linux
 lokasi: '/media/zen/data/web/blog (github)/'
+
+author:
+  disqus: mzaini30
