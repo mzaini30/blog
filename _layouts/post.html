@@ -24,6 +24,10 @@ layout: default
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = '{{ site.author.disqus }}';
+    
+    disqus_config = function(){
+      this.page.identifier = '{{ page.path }}'
+    }
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
