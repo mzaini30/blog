@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Apakah Kamu Takut Menatap Masa Depan?"
-date:   2018-09-19 22:22:00 +0800
-tags: puisi
+title:  "Jangan Sampai Rasa Lelah Menghambatmu"
+date:   2018-09-20 12:46:00 +0800
+tags: life
 ---
 
 Jangan sampai rasa lelah memperlambat pekerjaanmu. Teruslah berlari, teruslah berkarya, teruslah berpikir.
