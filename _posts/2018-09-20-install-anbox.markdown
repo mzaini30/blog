@@ -31,4 +31,6 @@ $ sudo apt update
 $ sudo apt install anbox-modules-dkms
 {% endhighlight %}
 
-Sumber: <https://github.com/anbox/anbox/blob/master/docs/install.md>
+Itu untuk awalnya. Untuk berikutnya, silahkan ikuti instruksi di <https://github.com/anbox/anbox/blob/master/docs/install.md>
+
+Oh iya, perhatikan juga spesifikasi komputer yang diperlukan. Barusan aku install, gagal karena spesifikasi komputer belum memadai.
