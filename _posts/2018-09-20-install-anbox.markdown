@@ -20,3 +20,15 @@ exec /snap/bin/anbox session-manager
 
 For command `exec /snap/bin/anbox session-manager` you can make simple script and append it
 to startup applications. That works at my elementary os 0.4 loki.
+
+---
+
+# Update
+
+{% highlight bash %}
+$ sudo add-apt-repository ppa:morphis/anbox-support
+$ sudo apt update
+$ sudo apt install anbox-modules-dkms
+{% endhighlight %}
+
+Sumber: <https://github.com/anbox/anbox/blob/master/docs/install.md>
