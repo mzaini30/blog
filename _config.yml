@@ -19,7 +19,7 @@ github_username:  mzaini30
 markdown: kramdown
 
 # lokasi blog di linux
-lokasi: '/media/zen/data/web/blog (github)/'
+lokasi: '/mnt/C48455A884559E2C/web/blog (github)/'
 
 author:
   disqus: zen-4
