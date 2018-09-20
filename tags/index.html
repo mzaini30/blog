@@ -25,7 +25,7 @@ title: Kategori
                 {% for post in site.tags[this_word] %}
                     {% if post.title != null %}
                         <li>
-                            <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}   ({{ post.date | date: "%B %d, %Y" }})</a>
+                            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}   ({{ post.date | date: "%B %d, %Y" }})</a>
                         </li>
                     {% endif %}
                 {% endfor %}
