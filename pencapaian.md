@@ -4,6 +4,10 @@ title: Pencapaian
 permalink: /pencapaian/
 ---
 
+Agustus 2018
+
+- [Pemateri di One Day One Post](https://www.instagram.com/p/Bm9pzwhBEaa/?taken-by=komunitas.odop)
+
 Maret 2018
 
 - [Mahasiswa Bertalenta Psikologi Universitas Mulawarman](https://web.facebook.com/photo.php?fbid=1643466622389421&set=a.131700173566081&type=3&theater)
