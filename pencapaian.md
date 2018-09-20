@@ -16,6 +16,10 @@ Maret 2017
 
 - [Wakil Ketua Himpunan Mahasiswa Psikologi Universitas Mulawarman](http://himapsiunmul.blogspot.com/2017/03/biodata-wakil-ketua-umum-himpunan.html)
 
+September 2016
+
+- [Menyelesaikan 4 Tantangan Proyek Euler](https://projecteuler.net/profile/mzaini30.png)
+
 Desember 2014
 
 - [Pemenang Giveaway Happily Ever After](https://luckty.wordpress.com/2014/12/31/pemenang-giveaway-happily-ever-after/)
