@@ -30,12 +30,12 @@ Buat file `github` yang berisi
 ~~~bash
 # clone git
 
-git clone --depth=1 https://username:password@github.com/username/$1
+git clone --depth=1 https://mzaini30:0809894kali@github.com/mzaini30/$1
 mv $1 "$1 (github)"
 
 # masukkan ke list
 
-aplikasi_upload_semua='~/aplikasi/bin/upload'
+aplikasi_upload_semua='/home/zen/aplikasi/bin/upload'
 
 printf 'cd "' >> $aplikasi_upload_semua
 printf '%s' "${PWD}" >> $aplikasi_upload_semua
@@ -44,6 +44,12 @@ printf '"' >> $aplikasi_upload_semua
 printf '\n' >> $aplikasi_upload_semua
 printf 'upload-biasa' >> $aplikasi_upload_semua
 printf '\n' >> $aplikasi_upload_semua
+
+# kasih tanda
+# ntar kalau misalnya ganti tempat, hapus lah filenya
+
+cd "$1 (github)"
+touch 'SUDAH MASUK LIST'
 ~~~
 
 Kemudian buat file `gitlab` yang berisi
@@ -51,12 +57,12 @@ Kemudian buat file `gitlab` yang berisi
 ~~~bash
 # clone git
 
-git clone --depth=1 https://username:password@gitlab.com/username/$1
+git clone --depth=1 https://mzaini30:0809894kali@gitlab.com/mzaini30/$1
 mv $1 "$1 (gitlab)"
 
 # masukkan ke list
 
-aplikasi_upload_semua='~/aplikasi/bin/upload'
+aplikasi_upload_semua='/home/zen/aplikasi/bin/upload'
 
 printf 'cd "' >> $aplikasi_upload_semua
 printf '%s' "${PWD}" >> $aplikasi_upload_semua
@@ -65,6 +71,12 @@ printf '"' >> $aplikasi_upload_semua
 printf '\n' >> $aplikasi_upload_semua
 printf 'upload-biasa' >> $aplikasi_upload_semua
 printf '\n' >> $aplikasi_upload_semua
+
+# kasih tanda
+# ntar kalau misalnya ganti tempat, hapus lah filenya
+
+cd "$1 (gitlab)"
+touch 'SUDAH MASUK LIST'
 ~~~
 
 Buat file `upload-biasa` yang berisi
@@ -101,7 +113,7 @@ Bagaimana jika ternya foldernya kita rename atau kita pindahkan lokasinya? Maka,
 ~~~bash
 # masukkan ke list
 
-aplikasi_upload_semua='~/aplikasi/bin/upload'
+aplikasi_upload_semua='/home/zen/aplikasi/bin/upload'
 
 printf 'cd "' >> $aplikasi_upload_semua
 printf '%s' "${PWD}" >> $aplikasi_upload_semua
@@ -110,6 +122,11 @@ printf '"' >> $aplikasi_upload_semua
 printf '\n' >> $aplikasi_upload_semua
 printf 'upload-biasa' >> $aplikasi_upload_semua
 printf '\n' >> $aplikasi_upload_semua
+
+# kasih tanda
+# ntar kalau misalnya ganti tempat, hapus lah filenya
+
+touch 'SUDAH MASUK LIST'
 ~~~
 
 Jadi, untuk menambahkan secara manual di list, tinggal kita buka foldernya lalu ketikkan `tambahkan` di Terminal
