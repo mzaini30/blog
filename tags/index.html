@@ -19,6 +19,7 @@ title: Kategori
 
 {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+    {% capture modulo %}{{ forloop.index0 | mod:5 }}{% endcapture %}
 	<div>
         <h1 id="{{ this_word }}">{{ this_word }}</h1>
             <ul>
@@ -31,4 +32,8 @@ title: Kategori
                 {% endfor %}
 		  </ul>
     </div>
+    {% if modulo == '4' %}
+        {% include iklan.html %}
+        <br>
+    {% endif %}
 {% endunless %}{% endfor %}
