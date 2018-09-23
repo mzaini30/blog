@@ -94,26 +94,22 @@ upload-biasa
 
 Sekarang, untuk upload ke Git semua folder, tinggal mengetikkan `upload` saja di Terminal
 
-# Tambahan
+# Menambahkan ke List Secara Manual
 
-Buat juga skrip `upload-manual` yang berisi
+Bagaimana jika ternya foldernya kita rename atau kita pindahkan lokasinya? Maka, kita tambahkan lagi ke list. Nah, sekarang coba buat file bernama `tambahkan` dengan isi di bawah ini
 
 ~~~bash
-while true
-	do
+# masukkan ke list
 
-		# skrip upload ke git nya
+aplikasi_upload_semua='~/aplikasi/bin/upload'
 
-		git status
-		git add -A .
-		git commit -m 'oke'
-		git push
-
-		# untuk pause
-
-		read -rsp $'Tekan sembarang tombol untuk upload lagi.\n\n\t'$1$'\n\n' -n 1 key
-
-	done
+printf 'cd "' >> $aplikasi_upload_semua
+printf '%s' "${PWD}" >> $aplikasi_upload_semua
+# printf '%s' "/$1 (gitlab)" >> $aplikasi_upload_semua
+printf '"' >> $aplikasi_upload_semua
+printf '\n' >> $aplikasi_upload_semua
+printf 'upload-biasa' >> $aplikasi_upload_semua
+printf '\n' >> $aplikasi_upload_semua
 ~~~
 
-Buat jaga-jaga siapa tau nggak masuk di list foldernya
+Jadi, untuk menambahkan secara manual di list, tinggal kita buka foldernya lalu ketikkan `tambahkan` di Terminal
