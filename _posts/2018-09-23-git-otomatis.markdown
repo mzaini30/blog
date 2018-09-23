@@ -19,6 +19,8 @@ Tambahkan skrip berikut di akhir file
 export PATH="$PATH:~/aplikasi/bin/"
 ~~~
 
+{% include iklan2.html %}
+
 Reboot atau Logout dari Elementary OS (distro Linux yang kupake, versinya Loki)
 
 # Buat Clone dari Gitlab dan Github

@@ -11,6 +11,8 @@ You can delete the lock file with the following command:
 sudo rm /var/lib/apt/lists/lock
 {% endhighlight %}
 
+{% include iklan2.html %}
+
 You may also need to delete the lock file in the cache directory
 
 {% highlight bash %}

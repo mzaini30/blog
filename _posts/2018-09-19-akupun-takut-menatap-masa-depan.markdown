@@ -17,6 +17,8 @@ Kamu berusaha tegar
 
 Namun
 
+{% include iklan2.html %}
+
 Aku tau ada jiwa yang rapuh di dalam sana
 
 Tempat yang tak terjangkau

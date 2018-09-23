@@ -16,6 +16,8 @@ Ya, aku harus jadi yang terbaik dalam segala hal:
 - Ibadah
 - Kecerdasan
 
+{% include iklan2.html %}
+
 Ya, pokoknya segala hal lah. Nggak ada yang namanya kompromi. Harus jadi yang terbaik.
 
 So, semuanya harus sempurna. Defrag waktumu. Jangan sisakan space yang hanya makan tempat. Setiap detik harus terisi dengan job yang mulai berkurang.
