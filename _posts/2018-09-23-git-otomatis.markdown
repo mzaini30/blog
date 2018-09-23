@@ -37,13 +37,13 @@ mv $1 "$1 (github)"
 
 aplikasi_upload_semua='~/aplikasi/bin/upload'
 
+printf '\n' >> $aplikasi_upload_semua
 printf 'cd "' >> $aplikasi_upload_semua
 printf '%s' "${PWD}" >> $aplikasi_upload_semua
 printf '%s' "/$1 (github)" >> $aplikasi_upload_semua
 printf '"' >> $aplikasi_upload_semua
-printf '\n' >> $aplikasi_upload_semua
+printf '; ' >> $aplikasi_upload_semua
 printf 'upload-biasa' >> $aplikasi_upload_semua
-printf '\n' >> $aplikasi_upload_semua
 
 # kasih tanda
 # ntar kalau misalnya ganti tempat, hapus lah filenya
@@ -64,13 +64,13 @@ mv $1 "$1 (gitlab)"
 
 aplikasi_upload_semua='~/aplikasi/bin/upload'
 
+printf '\n' >> $aplikasi_upload_semua
 printf 'cd "' >> $aplikasi_upload_semua
 printf '%s' "${PWD}" >> $aplikasi_upload_semua
 printf '%s' "/$1 (gitlab)" >> $aplikasi_upload_semua
 printf '"' >> $aplikasi_upload_semua
-printf '\n' >> $aplikasi_upload_semua
+printf '; ' >> $aplikasi_upload_semua
 printf 'upload-biasa' >> $aplikasi_upload_semua
-printf '\n' >> $aplikasi_upload_semua
 
 # kasih tanda
 # ntar kalau misalnya ganti tempat, hapus lah filenya
@@ -99,9 +99,8 @@ Setelah itu akan muncul folder dengan nama `notes (gitlab)`
 Nah, coba kita buka file `upload` nya yang di `~/aplikasi/bin`, maka akan bertuliskan
 
 ~~~bash
-cd "/mnt/C48455A884559E2C/game/notes (gitlab)"
-upload-biasa
 
+cd "/mnt/C48455A884559E2C/game/notes (gitlab)"; upload-biasa
 ~~~
 
 Sekarang, untuk upload ke Git semua folder, tinggal mengetikkan `upload` saja di Terminal
@@ -115,13 +114,13 @@ Bagaimana jika ternya foldernya kita rename atau kita pindahkan lokasinya? Maka,
 
 aplikasi_upload_semua='~/aplikasi/bin/upload'
 
+printf '\n' >> $aplikasi_upload_semua
 printf 'cd "' >> $aplikasi_upload_semua
 printf '%s' "${PWD}" >> $aplikasi_upload_semua
 # printf '%s' "/$1 (gitlab)" >> $aplikasi_upload_semua
 printf '"' >> $aplikasi_upload_semua
-printf '\n' >> $aplikasi_upload_semua
+printf '; ' >> $aplikasi_upload_semua
 printf 'upload-biasa' >> $aplikasi_upload_semua
-printf '\n' >> $aplikasi_upload_semua
 
 # kasih tanda
 # ntar kalau misalnya ganti tempat, hapus lah filenya
