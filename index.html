@@ -8,6 +8,9 @@ layout: default
 
   <ul class="post-list">
     {% for post in site.posts %}
+
+      {% capture modulo %}{{ forloop.index0 | mod:5 }}{% endcapture %}
+
       <li>
         <span class="post-meta">
           {{ post.date | date: "%b %-d, %Y" }}
@@ -22,6 +25,12 @@ layout: default
         </h2>
 
       </li>
+
+      {% if modulo == '4' %}
+        {% include iklan.html %}
+        <br>
+      {% endif %}
+
     {% endfor %}
   </ul>
 
