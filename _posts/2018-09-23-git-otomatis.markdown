@@ -30,12 +30,12 @@ Buat file `github` yang berisi
 ~~~bash
 # clone git
 
-git clone --depth=1 https://mzaini30:0809894kali@github.com/mzaini30/$1
+git clone --depth=1 https://username:password@github.com/username/$1
 mv $1 "$1 (github)"
 
 # masukkan ke list
 
-aplikasi_upload_semua='/home/zen/aplikasi/bin/upload'
+aplikasi_upload_semua='~/aplikasi/bin/upload'
 
 printf 'cd "' >> $aplikasi_upload_semua
 printf '%s' "${PWD}" >> $aplikasi_upload_semua
@@ -57,12 +57,12 @@ Kemudian buat file `gitlab` yang berisi
 ~~~bash
 # clone git
 
-git clone --depth=1 https://mzaini30:0809894kali@gitlab.com/mzaini30/$1
+git clone --depth=1 https://username:password@gitlab.com/username/$1
 mv $1 "$1 (gitlab)"
 
 # masukkan ke list
 
-aplikasi_upload_semua='/home/zen/aplikasi/bin/upload'
+aplikasi_upload_semua='~/aplikasi/bin/upload'
 
 printf 'cd "' >> $aplikasi_upload_semua
 printf '%s' "${PWD}" >> $aplikasi_upload_semua
@@ -113,7 +113,7 @@ Bagaimana jika ternya foldernya kita rename atau kita pindahkan lokasinya? Maka,
 ~~~bash
 # masukkan ke list
 
-aplikasi_upload_semua='/home/zen/aplikasi/bin/upload'
+aplikasi_upload_semua='~/aplikasi/bin/upload'
 
 printf 'cd "' >> $aplikasi_upload_semua
 printf '%s' "${PWD}" >> $aplikasi_upload_semua
