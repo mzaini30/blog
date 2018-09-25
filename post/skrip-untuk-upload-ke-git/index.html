@@ -7,13 +7,12 @@
     
     <title>
       
-      Tags - Zen
+      Skrip Untuk Upload Ke Git - Zen
       
 		</title>
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="http://blog2.muhammadzaini.com/tags/index.xml" rel="alternate" type="application/rss+xml" title="Zen" />
     
     <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
@@ -33,7 +32,7 @@
     
 </head>
 
-    <body class="tag-template">
+    <body class="post-template">
         <header class="main-header">
 	<div class="main-header-content">
 		<h1 class="blog-title">
@@ -88,32 +87,86 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
         
-
 <main class="content" role="main">
-  
-    
-      <h2 class="tag-title">Tags</h2>
-    
-  
+  <article class="post">
+    <header class="post-header">
+      <h2 class="post-title">Skrip Untuk Upload Ke Git</h2>
+      <section class="post-meta">
+        <time class="post-date">September 25, 2018</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>Ini isi skrip <code>upload</code></p>
 
-	<div class="extra-pagination">
-	    
+<pre><code class="language-bash">while true
+	do
 
-<nav class="pagination" role="navigation">
-    
-    <span class="page-number">Page 1 of 0</span>
-    
-</nav>
+		# skrip upload ke git nya
 
-	</div>
-  
-  
+		git status
+		git add -A .
+		git commit -m 'oke'
+		git push
 
-<nav class="pagination" role="navigation">
+		# untuk pause
+
+		read -rsp $'Tekan sembarang tombol untuk upload lagi.\n\n\t'&quot;$1&quot;$'\n\n' -n 1 key
+
+	done
+</code></pre>
+
+<p>Ini skrip <code>github</code></p>
+
+<pre><code class="language-bash"># clone git
+
+git clone --depth=1 https://username:password@github.com/username/$1
+mv $1 &quot;$1 (github)&quot;
+</code></pre>
+
+<p>Ini skrip <code>gitlab</code></p>
+
+<pre><code class="language-bash"># clone git
+
+git clone --depth=1 https://username:password@gitlab.com/username/$1
+mv $1 &quot;$1 (gitlab)&quot;
+</code></pre>
+
+<p>Cara clone nya, <code>gitlab nama-repo</code> atau <code>github nama-repo</code>. Dan cara uploadnya, buka foldernya terus ketik <code>upload nama-repo</code></p>
+
+
+      <p><a href="javascript:prompt('', 'subl \'/mnt/C48455A884559E2C/blog%20hugo/blog/content/post/skrip-untuk-upload-ke-git.md\''); void 0;">Edit</a></p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="tags post-meta">
+        Tagged
+        <a href="http://blog2.muhammadzaini.com/tags/pemrograman/">pemrograman</a>
+          
+      </section>
+    </footer>
+  </article>
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      
+      
+      
+      this.page.identifier = "http:\/\/blog2.muhammadzaini.com\/post\/skrip-untuk-upload-ke-git\/";
+    };
+
     
-    <span class="page-number">Page 1 of 0</span>
     
-</nav>
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = '//zen-4.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
 
 </main>
 

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Zen</title>
+    <link>http://blog2.muhammadzaini.com/tags/</link>
+    <description>Recent content in Tags on Zen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 25 Sep 2018 22:16:23 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog2.muhammadzaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog</title>
+      <link>http://blog2.muhammadzaini.com/tags/blog/</link>
+      <pubDate>Tue, 25 Sep 2018 22:16:23 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Life</title>
+      <link>http://blog2.muhammadzaini.com/tags/life/</link>
+      <pubDate>Tue, 25 Sep 2018 23:06:20 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/tags/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pemrograman</title>
+      <link>http://blog2.muhammadzaini.com/tags/pemrograman/</link>
+      <pubDate>Tue, 25 Sep 2018 23:07:48 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/tags/pemrograman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Puisi</title>
+      <link>http://blog2.muhammadzaini.com/tags/puisi/</link>
+      <pubDate>Tue, 25 Sep 2018 22:37:02 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/tags/puisi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quran</title>
+      <link>http://blog2.muhammadzaini.com/tags/quran/</link>
+      <pubDate>Tue, 25 Sep 2018 22:33:55 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/tags/quran/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Skripsi</title>
+      <link>http://blog2.muhammadzaini.com/tags/skripsi/</link>
+      <pubDate>Tue, 25 Sep 2018 20:52:51 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/tags/skripsi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tes</title>
+      <link>http://blog2.muhammadzaini.com/tags/tes/</link>
+      <pubDate>Tue, 25 Sep 2018 19:57:12 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/tags/tes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
