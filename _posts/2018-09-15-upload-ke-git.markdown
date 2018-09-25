@@ -25,6 +25,8 @@ while true
 	done
 ~~~
 
+{% include iklan2.html %}
+
 Ini skrip `github`
 
 ~~~bash
