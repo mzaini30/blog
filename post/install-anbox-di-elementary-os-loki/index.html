@@ -102,29 +102,23 @@
       
 
 <p>Solution for elementary os:</p>
-
-<pre><code class="language-bash">$ sudo apt update
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt update
 $ sudo apt install snapd
 $ snap install --classic anbox-installer
-#reboot pc
-$ anbox-installer
-#ignore errors and reboot computer once more
-exec /snap/bin/anbox session-manager
-# run from start menu Anbox
-</code></pre>
-
+<span style="color:#75715e">#reboot pc
+</span><span style="color:#75715e"></span>$ anbox-installer
+<span style="color:#75715e">#ignore errors and reboot computer once more
+</span><span style="color:#75715e"></span>exec /snap/bin/anbox session-manager
+# run from start menu Anbox</code></pre></div>
 <p>For command <code>exec /snap/bin/anbox session-manager</code> you can make simple script and append it
 to startup applications. That works at my elementary os 0.4 loki.</p>
 
 <hr />
 
 <h1 id="update">Update</h1>
-
-<pre><code class="language-bash">$ sudo add-apt-repository ppa:morphis/anbox-support
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo add-apt-repository ppa:morphis/anbox-support
 $ sudo apt update
-$ sudo apt install anbox-modules-dkms
-</code></pre>
-
+$ sudo apt install anbox-modules-dkms</code></pre></div>
 <p>Itu untuk awalnya. Untuk berikutnya, silahkan ikuti instruksi di <a href="https://github.com/anbox/anbox/blob/master/docs/install.md">https://github.com/anbox/anbox/blob/master/docs/install.md</a></p>
 
 <p>Oh iya, perhatikan juga spesifikasi komputer yang diperlukan. Barusan aku install, gagal karena spesifikasi komputer belum memadai.</p>

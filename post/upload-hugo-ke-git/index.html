@@ -99,43 +99,41 @@
       </section>
     </header>
     <section class="post-content">
-      <pre><code class="language-bash">upload_git(){
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">upload_git<span style="color:#f92672">(){</span>
 	git status
 	git add -A .
-	git commit -m 'oke'
+	git commit -m <span style="color:#e6db74">&#39;oke&#39;</span>
 	git push
-}
+<span style="color:#f92672">}</span>
 
-while true
-	do
+<span style="color:#66d9ef">while</span> true
+	<span style="color:#66d9ef">do</span>
 
-		# upload dulu ke source blog
-
+		<span style="color:#75715e"># upload dulu ke source blog
+</span><span style="color:#75715e"></span>
 		upload_git
 
-		# deploy
-
+		<span style="color:#75715e"># deploy
+</span><span style="color:#75715e"></span>
 		hugo
 
-		# masuk ke folder public
-
+		<span style="color:#75715e"># masuk ke folder public
+</span><span style="color:#75715e"></span>
 		cd public
 
-		# upload lagi
-
+		<span style="color:#75715e"># upload lagi
+</span><span style="color:#75715e"></span>
 		upload_git
 
-		# keluar dari folder
-
+		<span style="color:#75715e"># keluar dari folder
+</span><span style="color:#75715e"></span>
 		cd ..
 
-		# untuk pause
+		<span style="color:#75715e"># untuk pause
+</span><span style="color:#75715e"></span>
+		read -rsp <span style="color:#e6db74">$&#39;Tekan sembarang tombol untuk upload lagi.\n\n\t&#39;</span><span style="color:#e6db74">&#34;blog&#34;</span><span style="color:#e6db74">$&#39;\n\n&#39;</span> -n <span style="color:#ae81ff">1</span> key
 
-		read -rsp $'Tekan sembarang tombol untuk upload lagi.\n\n\t'&quot;blog&quot;$'\n\n' -n 1 key
-
-	done
-</code></pre>
-
+	<span style="color:#66d9ef">done</span></code></pre></div>
 
       <p><a href="javascript:prompt('', 'subl \'/mnt/C48455A884559E2C/blog%20hugo/blog/content/post/upload-hugo-ke-git.md\''); void 0;">Edit</a></p>
 
