@@ -5,10 +5,30 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 26 Sep 2018 14:45:30 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Sep 2018 15:38:09 +0800</lastBuildDate>
     
 	<atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Whatsapp</title>
+      <link>http://blog2.muhammadzaini.com/whatsapp/</link>
+      <pubDate>Wed, 26 Sep 2018 15:38:09 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/whatsapp/</guid>
+      <description>location.href = &#39;https://api.whatsapp.com/send?phone=6281545143654&amp;text=Assalamualaikum%20Kak%20Zen&#39;  </description>
+    </item>
+    
+    <item>
+      <title>Skrip Untuk Memasang Iklan Di Dalam Blog Hugo</title>
+      <link>http://blog2.muhammadzaini.com/post/skrip-untuk-memasang-iklan-di-dalam-blog-hugo/</link>
+      <pubDate>Wed, 26 Sep 2018 14:50:48 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/skrip-untuk-memasang-iklan-di-dalam-blog-hugo/</guid>
+      <description>Buat iklan2.html di dalam /layouts/shortcodes/. Kemudian, isi dengan kode adsense yang in article. Kalau di punyaku, ini kodenya:
+&amp;lt;!-- letakkan setelah 2 paragraf di dalam artikel --&amp;gt; &amp;lt;script async src=&amp;#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;ins class=&amp;#34;adsbygoogle&amp;#34; style=&amp;#34;display:block; text-align:center;&amp;#34; data-ad-layout=&amp;#34;in-article&amp;#34; data-ad-format=&amp;#34;fluid&amp;#34; data-ad-client=&amp;#34;ca-pub-2408628281705149&amp;#34; data-ad-slot=&amp;#34;1738060379&amp;#34;&amp;gt;&amp;lt;/ins&amp;gt; &amp;lt;script&amp;gt; (adsbygoogle = window.adsbygoogle || []).push({}); &amp;lt;/script&amp;gt; &amp;lt;br&amp;gt; Eksekusi Kode Pada skrip di bawah ini, ubah { { menjadi {{.
+{ {&amp;lt; iklan2 &amp;gt;}} Nah, skrip di atas itu, bisa diselipkan ke dalam postinganmu.</description>
+    </item>
     
     <item>
       <title>Gimas Belajar Pemrograman</title>
