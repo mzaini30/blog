@@ -572,3 +572,12 @@ a.nav-home, a.nav-blog {
 img {
     max-width: 100%;
 }
+
+.media-sosial {
+    margin: auto;
+}
+
+.media-sosial img {
+    width: 150px;
+    height: auto;
+}
