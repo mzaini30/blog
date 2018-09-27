@@ -184,7 +184,19 @@
 
 &lt;p&gt;Kemudian clone tuh dua repositori itu.&lt;/p&gt;
 
-&lt;p&gt;{{&amp;lt; iklan2 &amp;gt;}}&lt;/p&gt;
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;
 
 &lt;h1 id=&#34;buat-hugo&#34;&gt;Buat Hugo&lt;/h1&gt;
 
@@ -194,7 +206,19 @@
 
 &lt;p&gt;Kemudian, compile Hugo dengan perintah &lt;code&gt;hugo&lt;/code&gt;. Maka, setelah itu akan terbentuk folder &lt;code&gt;public/&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;{{&amp;lt; iklan2 &amp;gt;}}&lt;/p&gt;
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;
 
 &lt;h1 id=&#34;hubungkan-hugo-ke-gitlab-dan-github-pages&#34;&gt;Hubungkan Hugo ke Gitlab dan Github Pages&lt;/h1&gt;
 
@@ -206,7 +230,19 @@
 
 &lt;p&gt;Kemudian, buka folder &lt;code&gt;blog/&lt;/code&gt; kemudian copy folder &lt;code&gt;.git/&lt;/code&gt; ke &lt;code&gt;nama-blognya/public/&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;{{&amp;lt; iklan2 &amp;gt;}}&lt;/p&gt;
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;
 
 &lt;h1 id=&#34;skrip-lagi&#34;&gt;Skrip Lagi&lt;/h1&gt;
 
@@ -246,7 +282,19 @@
 		read -rsp &lt;span style=&#34;color:#e6db74&#34;&gt;$&amp;#39;Tekan sembarang tombol untuk upload lagi.\n\n\t&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blog&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&amp;#39;\n\n&amp;#39;&lt;/span&gt; -n &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; key
 
 	&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;{{&amp;lt; iklan2 &amp;gt;hu}}&lt;/p&gt;
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;
 
 &lt;h1 id=&#34;cara-memanggilnya&#34;&gt;Cara Memanggilnya&lt;/h1&gt;
 
