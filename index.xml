@@ -5,10 +5,20 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 27 Sep 2018 08:40:14 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 27 Sep 2018 15:58:06 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Seberapa Fokus Kamu</title>
+      <link>http://blog2.muhammadzaini.com/post/seberapa-fokus-kamu/</link>
+      <pubDate>Thu, 27 Sep 2018 15:58:06 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/seberapa-fokus-kamu/</guid>
+      <description>&lt;p&gt;Apa sih parameter fokus? Tentu saja parameter fokus adalah kamu mengerjakan suatu tugas dan &lt;strong&gt;tidak diselingi&lt;/strong&gt; dengan pekerjaan lain.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Gengsi Itu Mahal</title>
@@ -128,6 +138,10 @@
       
       <guid>http://blog2.muhammadzaini.com/post/gimas-belajar-pemrograman/</guid>
       <description>&lt;p&gt;Wow.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Penting kah ini? :|&lt;/p&gt;
 </description>
     </item>
     
@@ -155,7 +169,49 @@
       <pubDate>Wed, 26 Sep 2018 00:26:24 +0800</pubDate>
       
       <guid>http://blog2.muhammadzaini.com/post/upload-hugo-ke-git/</guid>
-      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;upload_git&lt;span style=&#34;color:#f92672&#34;&gt;(){&lt;/span&gt;
+      <description>
+
+&lt;h1 id=&#34;clone-repositori&#34;&gt;Clone Repositori&lt;/h1&gt;
+
+&lt;p&gt;Pertama, kamu buat dulu dua repositori. Yang pertama, bertugas sebagai penampung source code, sedangkan yang satunya bertugas sebagai penampil hasil compilenya. Kalau aku, yang sourcenya tak taro di Gitlab sedangkan yang tampilnya di Github yaitu di blog ini -&amp;gt; &lt;a href=&#34;http://blog2.muhammadzaini.com&#34;&gt;http://blog2.muhammadzaini.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Anggap aja dua repositori ini:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;source-blog&lt;/code&gt; (ini di Gitlab)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blog&lt;/code&gt; (ini di Github Pages)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Kemudian clone tuh dua repositori itu.&lt;/p&gt;
+
+&lt;p&gt;{{&amp;lt; iklan2 &amp;gt;}}&lt;/p&gt;
+
+&lt;h1 id=&#34;buat-hugo&#34;&gt;Buat Hugo&lt;/h1&gt;
+
+&lt;p&gt;Ketikkan perintah ini di Terminal:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo new site nama-blognya&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Maka, akan jadi folder dengan nama &lt;code&gt;nama-blognya/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Kemudian, compile Hugo dengan perintah &lt;code&gt;hugo&lt;/code&gt;. Maka, setelah itu akan terbentuk folder &lt;code&gt;public/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;{{&amp;lt; iklan2 &amp;gt;}}&lt;/p&gt;
+
+&lt;h1 id=&#34;hubungkan-hugo-ke-gitlab-dan-github-pages&#34;&gt;Hubungkan Hugo ke Gitlab dan Github Pages&lt;/h1&gt;
+
+&lt;p&gt;Buka folder &lt;code&gt;source-blog/&lt;/code&gt; kemudian ketikkan &lt;code&gt;Ctrl&lt;/code&gt; &lt;code&gt;H&lt;/code&gt;. Maka, akan tampil semua folder dan file yang hidden. Copy folder &lt;code&gt;.git/&lt;/code&gt; ke &lt;code&gt;nama-blognya/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lalu, buat file dengan nama &lt;code&gt;.gitignore&lt;/code&gt;. Ini isinya:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-plain-text&#34; data-lang=&#34;plain-text&#34;&gt;public/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Itu fungsinya supaya semua yang di folder &lt;code&gt;public/&lt;/code&gt; nggak terupload ke repositori yang Gitlab.&lt;/p&gt;
+
+&lt;p&gt;Kemudian, buka folder &lt;code&gt;blog/&lt;/code&gt; kemudian copy folder &lt;code&gt;.git/&lt;/code&gt; ke &lt;code&gt;nama-blognya/public/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;{{&amp;lt; iklan2 &amp;gt;}}&lt;/p&gt;
+
+&lt;h1 id=&#34;skrip-lagi&#34;&gt;Skrip Lagi&lt;/h1&gt;
+
+&lt;p&gt;Beri nama kode di bawah ini dengan &lt;code&gt;upload-blog&lt;/code&gt; dan simpan di folder Path.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;upload_git&lt;span style=&#34;color:#f92672&#34;&gt;(){&lt;/span&gt;
 	git status
 	git add -A .
 	git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;oke&amp;#39;&lt;/span&gt;
@@ -189,7 +245,13 @@
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
 		read -rsp &lt;span style=&#34;color:#e6db74&#34;&gt;$&amp;#39;Tekan sembarang tombol untuk upload lagi.\n\n\t&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blog&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&amp;#39;\n\n&amp;#39;&lt;/span&gt; -n &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; key
 
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;{{&amp;lt; iklan2 &amp;gt;hu}}&lt;/p&gt;
+
+&lt;h1 id=&#34;cara-memanggilnya&#34;&gt;Cara Memanggilnya&lt;/h1&gt;
+
+&lt;p&gt;Pada folder blog Hugo, jalankan aja &lt;code&gt;upload-blog&lt;/code&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -325,7 +387,7 @@ $ sudo apt install anbox-modules-dkms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;script&gt;
      (adsbygoogle = window.adsbygoogle || []).push({});
 &lt;/script&gt;
-&lt;br&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;
 
 &lt;p&gt;Aku tau ada jiwa yang rapuh di dalam sana&lt;/p&gt;
 
