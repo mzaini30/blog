@@ -5,10 +5,52 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 27 Sep 2018 17:23:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Sep 2018 07:06:04 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cara Install Linux Di Windows Tanpa Usb Dan Cd</title>
+      <link>http://blog2.muhammadzaini.com/post/cara-install-linux-di-windows-tanpa-usb-dan-cd/</link>
+      <pubDate>Fri, 28 Sep 2018 07:06:04 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/cara-install-linux-di-windows-tanpa-usb-dan-cd/</guid>
+      <description>&lt;p&gt;Oh iya, ini aku coba tapi &lt;em&gt;gagal&lt;/em&gt; karena dia minta ext2, bukan ntfs. Tapi kalau mau coba juga nggak papa.&lt;/p&gt;
+
+&lt;p&gt;Ini isinya aku &lt;em&gt;copas&lt;/em&gt; ya dari Youtube.&lt;/p&gt;
+
+&lt;p&gt;Here I&amp;rsquo;m gonna tell you about the 3rd choice you will need another Ubuntu ISO Image alongside Zorin ISO. I have choosen lubuntu (700 mb).&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Extract &lt;code&gt;wubi.exe&lt;/code&gt; from &lt;code&gt;ubuntu.iso&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;Put &lt;code&gt;ubuntu.iso&lt;/code&gt; and &lt;code&gt;wubi.exe&lt;/code&gt; at drive C.&lt;/li&gt;
+&lt;li&gt;Run wubi and continue installing ubuntu. When it asks for a reboot to continue, just  click reboot later.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now, here comes the tricky part.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Goto C:/ubuntu/install/boot.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Replace&lt;/p&gt;
+
+&lt;p&gt;vmlinux&lt;/p&gt;
+
+&lt;p&gt;initrd.lz&lt;/p&gt;
+
+&lt;p&gt;md5sum&lt;/p&gt;
+
+&lt;p&gt;With the same files from your choosen Linux distro ISO file. Most of the time you can get those file from the &lt;code&gt;casper&lt;/code&gt; folder of the ISO file.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Thats it. Now you are ready to install any Linux distro using wubi.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; Some linux distro has different initrd file extension like .gz, .xz, etc. You will need to modify the C:/ubuntu/install/boot/grub/grub.cfg according to the file extension.&lt;/p&gt;
+
+&lt;p&gt;Tapi kalau menurutku sih kalau ada flash disk, lebih enak pakai flash disk. Kalau buat bootable pakai Windows, pakai Rufus. Tapi kalau pakai Linux juga bisa buat bootable. Ada di Elementary Store aplikasinya. Cari aja dengan keyword &lt;code&gt;usb&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Seberapa Fokus Kamu</title>
@@ -17,6 +59,10 @@
       
       <guid>http://blog2.muhammadzaini.com/post/seberapa-fokus-kamu/</guid>
       <description>&lt;p&gt;Apa sih parameter fokus? Tentu saja parameter fokus adalah kamu mengerjakan suatu tugas dan &lt;strong&gt;tidak diselingi&lt;/strong&gt; dengan pekerjaan lain.&lt;/p&gt;
+
+&lt;p&gt;Kalau aku sih masih belum tapi terus diusahakan lah.&lt;/p&gt;
+
+&lt;p&gt;Fokus, fokus, fokus. Harus terus dicoba ya&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
@@ -374,7 +420,7 @@ mv $1 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span
     </item>
     
     <item>
-      <title>Install Anbox Di Elementary Os Loki</title>
+      <title>Install Anbox Di Elementary Os Loki (Masih Belum Berhasil)</title>
       <link>http://blog2.muhammadzaini.com/post/install-anbox-di-elementary-os-loki/</link>
       <pubDate>Tue, 25 Sep 2018 22:39:12 +0800</pubDate>
       
@@ -401,7 +447,7 @@ $ sudo apt update
 $ sudo apt install anbox-modules-dkms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Itu untuk awalnya. Untuk berikutnya, silahkan ikuti instruksi di &lt;a href=&#34;https://github.com/anbox/anbox/blob/master/docs/install.md&#34;&gt;https://github.com/anbox/anbox/blob/master/docs/install.md&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Oh iya, perhatikan juga spesifikasi komputer yang diperlukan. Barusan aku install, gagal karena spesifikasi komputer belum memadai.&lt;/p&gt;
+&lt;p&gt;Oh iya, perhatikan juga spesifikasi komputer yang diperlukan. Barusan aku install, &lt;strong&gt;gagal&lt;/strong&gt; karena &lt;em&gt;spesifikasi komputer belum memadai&lt;/em&gt;.&lt;/p&gt;
 </description>
     </item>
     

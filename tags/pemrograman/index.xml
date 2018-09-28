@@ -5,10 +5,22 @@
     <link>http://blog2.muhammadzaini.com/tags/pemrograman/</link>
     <description>Recent content in Pemrograman on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 26 Sep 2018 14:50:48 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Sep 2018 07:06:04 +0800</lastBuildDate>
     
 	<atom:link href="http://blog2.muhammadzaini.com/tags/pemrograman/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cara Install Linux Di Windows Tanpa Usb Dan Cd</title>
+      <link>http://blog2.muhammadzaini.com/post/cara-install-linux-di-windows-tanpa-usb-dan-cd/</link>
+      <pubDate>Fri, 28 Sep 2018 07:06:04 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/cara-install-linux-di-windows-tanpa-usb-dan-cd/</guid>
+      <description>Oh iya, ini aku coba tapi gagal karena dia minta ext2, bukan ntfs. Tapi kalau mau coba juga nggak papa.
+Ini isinya aku copas ya dari Youtube.
+Here I&amp;rsquo;m gonna tell you about the 3rd choice you will need another Ubuntu ISO Image alongside Zorin ISO. I have choosen lubuntu (700 mb).
+ Extract wubi.exe from ubuntu.iso file. Put ubuntu.iso and wubi.exe at drive C. Run wubi and continue installing ubuntu.</description>
+    </item>
     
     <item>
       <title>Skrip Untuk Memasang Iklan Di Dalam Blog Hugo</title>
@@ -56,7 +68,7 @@ while true do # skrip upload ke git nya  git status git add -A . git commit -m &
     </item>
     
     <item>
-      <title>Install Anbox Di Elementary Os Loki</title>
+      <title>Install Anbox Di Elementary Os Loki (Masih Belum Berhasil)</title>
       <link>http://blog2.muhammadzaini.com/post/install-anbox-di-elementary-os-loki/</link>
       <pubDate>Tue, 25 Sep 2018 22:39:12 +0800</pubDate>
       

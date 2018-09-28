@@ -7,7 +7,7 @@
     
     <title>
       
-      Install Anbox Di Elementary Os Loki (Masih Belum Berhasil) - Zen
+      Cara Install Linux Di Windows Tanpa Usb Dan Cd - Zen
       
 		</title>
 
@@ -98,38 +98,48 @@
 
   <article class="post">
     <header class="post-header">
-      <h2 class="post-title">Install Anbox Di Elementary Os Loki (Masih Belum Berhasil)</h2>
+      <h2 class="post-title">Cara Install Linux Di Windows Tanpa Usb Dan Cd</h2>
       <section class="post-meta">
-        <time class="post-date">September 25, 2018</time>
+        <time class="post-date">September 28, 2018</time>
       </section>
     </header>
     <section class="post-content">
-      
+      <p>Oh iya, ini aku coba tapi <em>gagal</em> karena dia minta ext2, bukan ntfs. Tapi kalau mau coba juga nggak papa.</p>
 
-<p>Solution for elementary os:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt update
-$ sudo apt install snapd
-$ snap install --classic anbox-installer
-<span style="color:#75715e">#reboot pc
-</span><span style="color:#75715e"></span>$ anbox-installer
-<span style="color:#75715e">#ignore errors and reboot computer once more
-</span><span style="color:#75715e"></span>exec /snap/bin/anbox session-manager
-# run from start menu Anbox</code></pre></div>
-<p>For command <code>exec /snap/bin/anbox session-manager</code> you can make simple script and append it
-to startup applications. That works at my elementary os 0.4 loki.</p>
+<p>Ini isinya aku <em>copas</em> ya dari Youtube.</p>
 
-<hr />
+<p>Here I&rsquo;m gonna tell you about the 3rd choice you will need another Ubuntu ISO Image alongside Zorin ISO. I have choosen lubuntu (700 mb).</p>
 
-<h1 id="update">Update</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo add-apt-repository ppa:morphis/anbox-support
-$ sudo apt update
-$ sudo apt install anbox-modules-dkms</code></pre></div>
-<p>Itu untuk awalnya. Untuk berikutnya, silahkan ikuti instruksi di <a href="https://github.com/anbox/anbox/blob/master/docs/install.md">https://github.com/anbox/anbox/blob/master/docs/install.md</a></p>
+<ol>
+<li>Extract <code>wubi.exe</code> from <code>ubuntu.iso</code> file.</li>
+<li>Put <code>ubuntu.iso</code> and <code>wubi.exe</code> at drive C.</li>
+<li>Run wubi and continue installing ubuntu. When it asks for a reboot to continue, just  click reboot later.</li>
+</ol>
 
-<p>Oh iya, perhatikan juga spesifikasi komputer yang diperlukan. Barusan aku install, <strong>gagal</strong> karena <em>spesifikasi komputer belum memadai</em>.</p>
+<p>Now, here comes the tricky part.</p>
+
+<ol>
+<li>Goto C:/ubuntu/install/boot.</li>
+
+<li><p>Replace</p>
+
+<p>vmlinux</p>
+
+<p>initrd.lz</p>
+
+<p>md5sum</p>
+
+<p>With the same files from your choosen Linux distro ISO file. Most of the time you can get those file from the <code>casper</code> folder of the ISO file.</p></li>
+</ol>
+
+<p>Thats it. Now you are ready to install any Linux distro using wubi.</p>
+
+<p><em>Note:</em> Some linux distro has different initrd file extension like .gz, .xz, etc. You will need to modify the C:/ubuntu/install/boot/grub/grub.cfg according to the file extension.</p>
+
+<p>Tapi kalau menurutku sih kalau ada flash disk, lebih enak pakai flash disk. Kalau buat bootable pakai Windows, pakai Rufus. Tapi kalau pakai Linux juga bisa buat bootable. Ada di Elementary Store aplikasinya. Cari aja dengan keyword <code>usb</code>.</p>
 
 
-      <p><a href="javascript:prompt('', 'subl \'/mnt/C48455A884559E2C/blog/content/post/install-anbox-di-elementary-os-loki.md\''); void 0;">Edit</a></p>
+      <p><a href="javascript:prompt('', 'subl \'/mnt/C48455A884559E2C/blog/content/post/cara-install-linux-di-windows-tanpa-usb-dan-cd.md\''); void 0;">Edit</a></p>
 
     </section>
     <footer class="post-footer">
@@ -147,7 +157,7 @@ $ sudo apt install anbox-modules-dkms</code></pre></div>
       
       
       
-      this.page.identifier = "http:\/\/blog2.muhammadzaini.com\/post\/install-anbox-di-elementary-os-loki\/";
+      this.page.identifier = "http:\/\/blog2.muhammadzaini.com\/post\/cara-install-linux-di-windows-tanpa-usb-dan-cd\/";
     };
 
     
