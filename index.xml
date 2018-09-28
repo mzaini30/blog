@@ -5,10 +5,40 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 28 Sep 2018 16:06:03 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Sep 2018 17:54:27 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Darimana Mulai Belajar Pemrograman</title>
+      <link>http://blog2.muhammadzaini.com/post/darimana-mulai-belajar-pemrograman/</link>
+      <pubDate>Fri, 28 Sep 2018 17:54:27 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/darimana-mulai-belajar-pemrograman/</guid>
+      <description>
+
+&lt;p&gt;Banyak temanku yang nanya lah, &amp;ldquo;Zen, aku mau belajar koding nih. Bagusnya mulai dari manan lah?&amp;rdquo; &amp;ldquo;Zen, ajarin pemrograman dong.&amp;rdquo; &amp;ldquo;Zen, aku awam nih soal koding. Bagusnya mulai dari mana ya?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Jadi, aku di artikel ini tak coba jelaskan lah bagusnya mulai dari mana.&lt;/p&gt;
+
+&lt;h1 id=&#34;ngumpulin-niat-dulu&#34;&gt;Ngumpulin Niat Dulu&lt;/h1&gt;
+
+&lt;h1 id=&#34;memilih-os&#34;&gt;Memilih OS&lt;/h1&gt;
+
+&lt;p&gt;Kalau menurutku sih, paling enak itu ya pakai Linux. Mau pakai Linux jenis apapun nggak masalah. Mau Linux yang Linux Mint, Elementary OS, Deepin, Kali Linux, Ubuntu, Lubuntu, Edubuntu, Xamarin, Debian, Arch Linux, Manjaro, dan lain-lainnya. Semua Linux itu sama aja ya. Terserah kamunya aja sih enak dan nyaman pakai yang mana.&lt;/p&gt;
+
+&lt;p&gt;Kalau yang lagi kupake sekarang ini ya Elementary OS. Tampilannya enak macam Apple (Mac OS X).&lt;/p&gt;
+
+&lt;p&gt;Tapi kusarankan ya, jangan full Linux di satu laptop. Ada Windowsnya juga lah. Buat nanti kalau pakai tools koding yang memang kita punyanya yang versi Windows. Daripada download lagi kan yang versi Linux. Contohnya aja yang kupunya ini, Eclipse. Walaupun memang ada sih aku Android Studio di Linux tapi ya masih bingung cara pakainya. Sama loadingnya juga naudzubillah. Masih lebih mudah pakai Eclipse Indigo (versi lawas) yang di Windows.&lt;/p&gt;
+
+&lt;p&gt;Oh iya, ntar tutorial-tutorial di sini aku pakai yang versi Linux ya. Soalnya capek lah aku bolak-balik Linux dan Windows. Oke, jadi tanya teman ya, atau tanya Mbah Google gimana caranya dual boot Windows dan Linux.&lt;/p&gt;
+
+&lt;h1 id=&#34;memilih-tools&#34;&gt;Memilih Tools&lt;/h1&gt;
+
+&lt;h1 id=&#34;belajar-buat-html-dulu&#34;&gt;Belajar Buat HTML Dulu&lt;/h1&gt;
+</description>
+    </item>
     
     <item>
       <title>Yang Harus Diperhatikan Setelah Menginstall Elementary Os</title>

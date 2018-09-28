@@ -5,10 +5,21 @@
     <link>http://blog2.muhammadzaini.com/tags/pemrograman/</link>
     <description>Recent content in Pemrograman on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 28 Sep 2018 16:06:03 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Sep 2018 17:54:27 +0800</lastBuildDate>
     
 	<atom:link href="http://blog2.muhammadzaini.com/tags/pemrograman/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Darimana Mulai Belajar Pemrograman</title>
+      <link>http://blog2.muhammadzaini.com/post/darimana-mulai-belajar-pemrograman/</link>
+      <pubDate>Fri, 28 Sep 2018 17:54:27 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/darimana-mulai-belajar-pemrograman/</guid>
+      <description>Banyak temanku yang nanya lah, &amp;ldquo;Zen, aku mau belajar koding nih. Bagusnya mulai dari manan lah?&amp;rdquo; &amp;ldquo;Zen, ajarin pemrograman dong.&amp;rdquo; &amp;ldquo;Zen, aku awam nih soal koding. Bagusnya mulai dari mana ya?&amp;rdquo;
+Jadi, aku di artikel ini tak coba jelaskan lah bagusnya mulai dari mana.
+Ngumpulin Niat Dulu Memilih OS Kalau menurutku sih, paling enak itu ya pakai Linux. Mau pakai Linux jenis apapun nggak masalah. Mau Linux yang Linux Mint, Elementary OS, Deepin, Kali Linux, Ubuntu, Lubuntu, Edubuntu, Xamarin, Debian, Arch Linux, Manjaro, dan lain-lainnya.</description>
+    </item>
     
     <item>
       <title>Yang Harus Diperhatikan Setelah Menginstall Elementary Os</title>
