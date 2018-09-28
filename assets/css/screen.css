@@ -581,3 +581,7 @@ img {
     width: 150px;
     height: auto;
 }
+
+.related-post {
+    text-transform: capitalize;
+}
