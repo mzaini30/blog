@@ -5,10 +5,23 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 28 Sep 2018 17:54:27 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Sep 2018 20:05:23 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cara Cepat Sum Di Excel</title>
+      <link>http://blog2.muhammadzaini.com/post/cara-cepat-sum-di-excel/</link>
+      <pubDate>Fri, 28 Sep 2018 20:05:23 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/cara-cepat-sum-di-excel/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Blok sederetan sel yang akan dijumlahkan&lt;/li&gt;
+&lt;li&gt;Pencet &lt;code&gt;Alt&lt;/code&gt; &lt;code&gt;=&lt;/code&gt; terus tekan &lt;code&gt;Enter&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Darimana Mulai Belajar Pemrograman</title>
