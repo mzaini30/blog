@@ -5,10 +5,30 @@
     <link>http://blog2.muhammadzaini.com/post/</link>
     <description>Recent content in Posts on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 28 Sep 2018 07:06:04 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Sep 2018 16:06:03 +0800</lastBuildDate>
     
 	<atom:link href="http://blog2.muhammadzaini.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Yang Harus Diperhatikan Setelah Menginstall Elementary Os</title>
+      <link>http://blog2.muhammadzaini.com/post/yang-harus-diperhatikan-setelah-menginstall-elementary-os/</link>
+      <pubDate>Fri, 28 Sep 2018 16:06:03 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/yang-harus-diperhatikan-setelah-menginstall-elementary-os/</guid>
+      <description>Menggunakan Elementary OS itu kayaknya sesuatu yang seru ya. Tampilannya mewah macam Mac OS X namun bisa digunakan untuk laptop low end macam laptop dua jutaan asalkan RAMnya minimal 2 giga. Nah, berikut ini adalah beberapa hal yang perlu diperhatikan supaya laptopmu nggak lemot setelah install Elementary OS:
+ Gunakan aplikasi seperlunya saja
+Install aplikasi tuh gampang aja ya. Udah ada macam App Storenya gitu. Tapi, gunakan aplikasi yang diperlukan saja.</description>
+    </item>
+    
+    <item>
+      <title>Install Custom Fonts in Elementary Os</title>
+      <link>http://blog2.muhammadzaini.com/post/install-custom-fonts-in-elementary-os/</link>
+      <pubDate>Fri, 28 Sep 2018 09:28:19 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/install-custom-fonts-in-elementary-os/</guid>
+      <description>Masukkan folder/file fontnya di ~/.local/share/fonts/</description>
+    </item>
     
     <item>
       <title>Cara Install Linux Di Windows Tanpa Usb Dan Cd</title>

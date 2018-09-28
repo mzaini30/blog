@@ -5,10 +5,44 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 28 Sep 2018 07:06:04 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Sep 2018 16:06:03 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Yang Harus Diperhatikan Setelah Menginstall Elementary Os</title>
+      <link>http://blog2.muhammadzaini.com/post/yang-harus-diperhatikan-setelah-menginstall-elementary-os/</link>
+      <pubDate>Fri, 28 Sep 2018 16:06:03 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/yang-harus-diperhatikan-setelah-menginstall-elementary-os/</guid>
+      <description>&lt;p&gt;Menggunakan Elementary OS itu kayaknya sesuatu yang seru ya. Tampilannya mewah macam Mac OS X namun bisa digunakan untuk laptop low end macam laptop dua jutaan asalkan RAMnya minimal 2 giga. Nah, berikut ini adalah beberapa hal yang perlu diperhatikan supaya laptopmu &lt;em&gt;nggak lemot&lt;/em&gt; setelah install Elementary OS:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Gunakan aplikasi seperlunya saja&lt;/p&gt;
+
+&lt;p&gt;Install aplikasi tuh gampang aja ya. Udah ada macam App Storenya gitu. Tapi, gunakan aplikasi yang diperlukan saja. Yang nggak diperlukan hapus aja.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Jangan update sistem&lt;/p&gt;
+
+&lt;p&gt;Kalau ada notifikasi update sistem, baiknya nggak usah update. Soalnya, ntar malah semakin berat laptopnya.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Jangan autoremove&lt;/p&gt;
+
+&lt;p&gt;Kita bisa autoremove aplikasi yang nggak digunakan dengan &lt;code&gt;sudo apt autoremove&lt;/code&gt; tapi baiknya jangan lakukan. Kenapa? Ntar, aplikasi yang sebenarnya kita perlukan malah kehapus. Kan, namanya sistem ada aja celah untuk salah.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install Custom Fonts in Elementary Os</title>
+      <link>http://blog2.muhammadzaini.com/post/install-custom-fonts-in-elementary-os/</link>
+      <pubDate>Fri, 28 Sep 2018 09:28:19 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/install-custom-fonts-in-elementary-os/</guid>
+      <description>&lt;p&gt;Masukkan folder/file fontnya di &lt;code&gt;~/.local/share/fonts/&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cara Install Linux Di Windows Tanpa Usb Dan Cd</title>
