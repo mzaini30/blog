@@ -5,10 +5,149 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 28 Sep 2018 20:05:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Sep 2018 08:33:25 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Perbedaan Hugo Dengan Blogspot</title>
+      <link>http://blog2.muhammadzaini.com/post/perbedaan-hugo-dengan-blogspot/</link>
+      <pubDate>Sat, 29 Sep 2018 08:33:25 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/perbedaan-hugo-dengan-blogspot/</guid>
+      <description>&lt;p&gt;Sebenarnya sangat nggak relevan atau nggak adil banget ya membandingkan Blogspot dengan Hugo. Secara, sistem di antara keduanya sudah sangat berbeda jauh. Ya, mungkin di sini nggak cuma menampilkan perbedaannya tapi juga persamaannya. Jadi intinya, selamat membaca ya.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Sama-sama Blog&lt;/p&gt;
+
+&lt;p&gt;Oke, keduanya sama-sama blog. Mau pakai Blogspot ataupun Hugo, kalau kamu nggak ngisi itu blog ya nggak jalan-jalan lah.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Kalau Hugo Menggunakan Sistem di OS Buat Menjalankan Sedangkan Blogspot, Kita Hanya Perlu Browser&lt;/p&gt;
+
+&lt;p&gt;Kalau Hugo ini bagusnya dijalankan di linux nggak tau ya kalau di windows bisa apa nggak. Nah, kalau Blogspot kan, yang penting kita punya Firefox aja atau Chrome, maka kita sudah bisa menggunakannya.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Hugo Bisa Dijalankan Offline&lt;/p&gt;
+
+&lt;p&gt;Cukup dengan mengetikkan perintah &lt;code&gt;Hugo server&lt;/code&gt; di Terminal maka kita sudah bisa menjalankan Hugo. Bayangin lah kalau misalnya kamu berada di tempat yang sangat terpencil dan kamu pengeeen banget buat blogging. Kan susah tuh. Nunggu loadingnya lamaaaa banget kalau Blogspot karena sinyal cuma ada Edge. Kalau Hugo kan bisa aja uploadnya ntar-ntar.&lt;/p&gt;
+
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Hugo Pakai Markdown Buat Nulis Sedangkan Blogspot Sudah WYSIWYG&lt;/p&gt;
+
+&lt;p&gt;Kalau di Blogspot, kamu tinggal nulis macam di Word aja. Kalau Hugo, pakai Markdown.&lt;/p&gt;
+
+&lt;p&gt;Sebenarnya Markdown ini mudah kah susah sih? Ya, tergantung kamunya aja mandangnya gimana. Kalau menurutku sih lebih gampang, lebih fleksibel, dan lebih efisien. Contohnya aja di bawah ini:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Tebal&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;**tebal**&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Miring&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;_miring_&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#!&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;[&lt;span style=&#34;color:#f92672&#34;&gt;teks link&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;http://ini-linknya.com&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Gambar&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;![&lt;span style=&#34;color:#f92672&#34;&gt;keterangan gambar&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;link-menuju-gambar.jpg&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Paragraf&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;Ini isi paragraf satu.&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;Ini isi paragraf dua.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Tabel&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;| judul | judul |&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;|---|---|&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;| isi | isi |&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Perlu Sedikit Kemampuan Pemrograman untuk Menjalankan Hugo&lt;/p&gt;
+
+&lt;p&gt;Kalau untuk edit template di Blogspot bisa dibilang mudah lah karena kita hanya harus paham sedikit dari HTML, Javascript, dan CSS. Dan memang ketiganya itu logikanya mudah dipahami. Berbeda dengan Hugo yang menggunakan Go Templating. Agak aneh sih bahasanya.&lt;/p&gt;
+
+&lt;p&gt;Misalnya saja:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Javascript&lt;/th&gt;
+&lt;th&gt;Go Templating&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;if (argumen_1 &amp;amp;&amp;amp; argumen_2){}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;{{ if and (argumen_1) (argumen_2) }} {{ end }}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;if (!argumen){}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;{{ if (ne argumen) }} {{ end }}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;var = &#39;nilai&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;$var := &#39;nilai&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;for (n in list){}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;{{ range list }} {{ end }}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Kalau Ngedit Postingan di Hugo, Dia Reload Sendiri Habis Kita Edit&lt;/p&gt;
+
+&lt;p&gt;Ini yang membuat aku kagum lah. Nggak ada di Blogspot kayak gini. Bahkan di tools tantangannya, yaitu Jekyll juga nggak ada. Mantap wal.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Adakah Keinginan Berubah Dan Mengubah</title>
+      <link>http://blog2.muhammadzaini.com/post/adakah-keinginan-berubah-dan-mengubah/</link>
+      <pubDate>Sat, 29 Sep 2018 08:25:29 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/adakah-keinginan-berubah-dan-mengubah/</guid>
+      <description>&lt;p&gt;Apa itu perfect? Kita nggak mampu menjangkaunya. Kalau perubahan? Tentu kita tau kan?&lt;/p&gt;
+
+&lt;p&gt;Perubahan itu simpel. Intinya, ada posisi awal misalnya rumah kotor. Terus ada harapan yang ingin kita capai yaitu rumah bersih. Maka, kita berada di dalam proses itu yaitu &lt;em&gt;mengubah&lt;/em&gt; rumah yang sebelumnya kotor menjadi bersih. Paham lok?&lt;/p&gt;
+
+&lt;p&gt;Allah subhanahu wa taala berfirman:&lt;/p&gt;
+
+&lt;p&gt;إن الله لا يغير ما بقوم حتى يغيروا بأنفسهم&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cara Cepat Sum Di Excel</title>
