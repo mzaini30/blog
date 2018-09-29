@@ -5,10 +5,103 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 29 Sep 2018 10:38:19 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Sep 2018 22:52:46 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kontur: Skoring Otomatis Data Dari Google Form</title>
+      <link>http://blog2.muhammadzaini.com/post/kontur-skoring-otomatis-data-dari-google-form/</link>
+      <pubDate>Sat, 29 Sep 2018 22:52:46 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/kontur-skoring-otomatis-data-dari-google-form/</guid>
+      <description>
+
+&lt;p&gt;Yang namanya tugas itu ngerjainnya pakai cara cepat ya. Nah, ini adalah sekelumit dari cara cepat buat mata kuliah konstruksi alat ukur. So, buat kamu yang dapat tutorial ini, share juga lah ke teman yang lainnya.&lt;/p&gt;
+
+&lt;p&gt;Oke, ceritanya nih aku udah ngeshare form dari Google Form terus langkah pertama adalah kita download dulu formnya.&lt;/p&gt;
+
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;
+
+&lt;h1 id=&#34;download-laporan-dari-google-form&#34;&gt;Download Laporan dari Google Form&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/kontur/ambil-form-1.png&#34; alt=&#34;ambil laporan dari Google Form&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/kontur/ambil-form-2.png&#34; alt=&#34;ambil laporan dari Google Form, download excelnya&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Terus pilih &lt;code&gt;buat spreadsheet baru&lt;/code&gt; dan klik &lt;code&gt;buat&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pas ada tulisannya &lt;code&gt;spreadsheet telah dibuat&lt;/code&gt;, klik &lt;code&gt;buka&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tunggu sampai spreadsheet selesai loading. Ngopi sek lur.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/kontur/jadikan-excel.png&#34; alt=&#34;jadikan excel&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/kontur/penampakan-excel.png&#34; alt=&#34;jadikan excel&#34; /&gt;&lt;/p&gt;
+
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;
+
+&lt;h1 id=&#34;mulai-olah-data-otomatis&#34;&gt;Mulai Olah Data Otomatis&lt;/h1&gt;
+
+&lt;p&gt;Buka &lt;a href=&#34;http://muhammadzaini.com&#34;&gt;http://muhammadzaini.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pilih &lt;code&gt;&amp;lt;aplikasi web&amp;gt;&lt;/code&gt; di daftar menu yang di atas, habisnya judul &lt;code&gt;Zen&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Cari bagian &lt;code&gt;penelitian&lt;/code&gt; dan klik &lt;code&gt;kontur&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Terus diisi deh.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/kontur/fav.png&#34; alt=&#34;isi favorable dan unfavorable&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/kontur/ss-s-ts-sts.png&#34; alt=&#34;sangat setuju, setuju, tidak setuju, sangat tidak setuju&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Terus copy paste datanya dari excel ke kolom &lt;code&gt;data&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/kontur/copas.png&#34; alt=&#34;copy paste data dari excel&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/kontur/copas-target.png&#34; alt=&#34;copy paste data dari excel&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Jangan lupa untuk menghapus baris terakhir yang kosong. &lt;strong&gt;Perhatikan baik-baik&lt;/strong&gt; ya penjelasan di bawah:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;Sangat Setuju	Tidak Setuju	Sangat Tidak Setuju	Sangat Setuju	Tidak Setuju	Sangat Setuju	Tidak Setuju	Sangat Tidak Setuju
+Tidak Setuju	Sangat Setuju	Sangat Tidak Setuju	Tidak Setuju	Tidak Setuju	Sangat Setuju	Setuju	Tidak Setuju
+~~~ (ada baris kosong di sini)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nah, di situ kan ada baris kosong, dihapus. Jadinya:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;Sangat Setuju	Tidak Setuju	Sangat Tidak Setuju	Sangat Setuju	Tidak Setuju	Sangat Setuju	Tidak Setuju	Sangat Tidak Setuju
+Tidak Setuju	Sangat Setuju	Sangat Tidak Setuju	Tidak Setuju	Tidak Setuju	Sangat Setuju	Setuju	Tidak Setuju ~~~ (ini akhir teks. Nggak ada baris kosong atau enter lagi)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Soalnya kalau nggak dihapus, skripnya nggak jalan karena yang harusnya satu baris itu ada delapan item (sampai I), malah satu item aja (atau kosong). Kan skripnya bingung tuh.&lt;/p&gt;
+
+&lt;p&gt;Klik &lt;code&gt;convert&lt;/code&gt; dan copas ke excel.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/kontur/copas-hasil.png&#34; alt=&#34;copas hasil&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/kontur/copas-hasil-excel.png&#34; alt=&#34;copas hasil&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Tampilan Elementary Os</title>
