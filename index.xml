@@ -5,10 +5,20 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 29 Sep 2018 08:33:25 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Sep 2018 10:38:19 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tampilan Elementary Os</title>
+      <link>http://blog2.muhammadzaini.com/post/tampilan-elementary-os/</link>
+      <pubDate>Sat, 29 Sep 2018 10:36:01 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/tampilan-elementary-os/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://blog2.muhammadzaini.com/gambar/tampilan-elementary-os/beranda.png&#34; alt=&#34;tampilan elementary os&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Perbedaan Hugo Dengan Blogspot</title>
