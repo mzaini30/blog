@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Zen</title>
+    <link>http://blog2.muhammadzaini.com/tags/hugo/</link>
+    <description>Recent content in Hugo on Zen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 26 Sep 2018 14:50:48 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog2.muhammadzaini.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Skrip Untuk Memasang Iklan Di Dalam Blog Hugo</title>
+      <link>http://blog2.muhammadzaini.com/post/skrip-untuk-memasang-iklan-di-dalam-blog-hugo/</link>
+      <pubDate>Wed, 26 Sep 2018 14:50:48 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/skrip-untuk-memasang-iklan-di-dalam-blog-hugo/</guid>
+      <description>Buat iklan2.html di dalam /layouts/shortcodes/. Kemudian, isi dengan kode adsense yang in article. Kalau di punyaku, ini kodenya:
+&amp;lt;!-- letakkan setelah 2 paragraf di dalam artikel --&amp;gt; &amp;lt;script async src=&amp;#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;ins class=&amp;#34;adsbygoogle&amp;#34; style=&amp;#34;display:block; text-align:center;&amp;#34; data-ad-layout=&amp;#34;in-article&amp;#34; data-ad-format=&amp;#34;fluid&amp;#34; data-ad-client=&amp;#34;ca-pub-2408628281705149&amp;#34; data-ad-slot=&amp;#34;1738060379&amp;#34;&amp;gt;&amp;lt;/ins&amp;gt; &amp;lt;script&amp;gt; (adsbygoogle = window.adsbygoogle || []).push({}); &amp;lt;/script&amp;gt; &amp;lt;br&amp;gt; Eksekusi Kode Pada skrip di bawah ini, ubah { { menjadi {{.
+{ {&amp;lt; iklan2 &amp;gt;}} Nah, skrip di atas itu, bisa diselipkan ke dalam postinganmu.</description>
+    </item>
+    
+    <item>
+      <title>Upload Hugo Ke Git</title>
+      <link>http://blog2.muhammadzaini.com/post/upload-hugo-ke-git/</link>
+      <pubDate>Wed, 26 Sep 2018 00:26:24 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/upload-hugo-ke-git/</guid>
+      <description>Clone Repositori Pertama, kamu buat dulu dua repositori. Yang pertama, bertugas sebagai penampung source code, sedangkan yang satunya bertugas sebagai penampil hasil compilenya. Kalau aku, yang sourcenya tak taro di Gitlab sedangkan yang tampilnya di Github yaitu di blog ini -&amp;gt; http://blog2.muhammadzaini.com.
+Anggap aja dua repositori ini:
+ source-blog (ini di Gitlab) blog (ini di Github Pages)  Kemudian clone tuh dua repositori itu.
+   (adsbygoogle = window.</description>
+    </item>
+    
+  </channel>
+</rss>

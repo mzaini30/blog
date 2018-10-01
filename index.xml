@@ -5,10 +5,50 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 30 Sep 2018 20:07:08 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Oct 2018 18:50:47 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mengapa Sebaiknya Tidak Semua Orang Menggunakan Linux</title>
+      <link>http://blog2.muhammadzaini.com/post/mengapa-sebaiknya-tidak-semua-orang-menggunakan-linux/</link>
+      <pubDate>Mon, 01 Oct 2018 18:33:10 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/mengapa-sebaiknya-tidak-semua-orang-menggunakan-linux/</guid>
+      <description>&lt;p&gt;Setiap orang tentunya ingin yang ideal. Ingin pahala yang banyak, ingin rezeki yang banyak, ingin sistem komputer yang bebas dari kata membayar. Dan banyak hal ideal yang ingin kita capai. Namun, tentunya untuk menggapai itu semua, harus ada yang namanya usaha, harus ada yang namanya perjuangan.&lt;/p&gt;
+
+&lt;p&gt;Contohnya aja macam menggunakan Linux.&lt;/p&gt;
+
+&lt;p&gt;Padahal sekarang ni lah, menggunakan Linux ini makin mudah. User interfacenya makin familiar, proses penginstalan yang tinggal klik-klik, sudah ada app centernya, dan masih banyak hal lainnya yang membuat user biasa menggunakan Linux.&lt;/p&gt;
+
+&lt;p&gt;Tapi tetap aja sih masih ada beberapa hal yang membingungkan oleh user biasa dan sudah biasa bagi programmer, contohnya aja dalam menggunakan Terminal.&lt;/p&gt;
+
+&lt;p&gt;Terminal merupakan kelebihan dari Linux dan kurang mantep kalau di Windows (Command Prompt). Dengan Terminal, kita bisa melakukan banyak hal. Bisa kustom banyak hal. Ya pokoknya banyak lah yang bisa kita lakukan dengan Terminal. Yang lagi kerasa sekarang sih dalam build blog ini. Aku &lt;a href=&#34;http://blog2.muhammadzaini.com/tags/hugo/&#34;&gt;menggunakan Hugo&lt;/a&gt; dan itu dilakukan melalui Terminal.&lt;/p&gt;
+
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;
+
+&lt;p&gt;Juga, bisa membuat skrip-skrip sendiri yang bisa kita jalankan melalui Terminal. Contohnya aja &lt;a href=&#34;http://blog2.muhammadzaini.com/post/upload-hugo-ke-git/&#34;&gt;Upload Hugo ke Git&lt;/a&gt;, &lt;a href=&#34;http://blog2.muhammadzaini.com/post/skrip-untuk-upload-ke-git/&#34;&gt;Skrip untuk Upload ke Git&lt;/a&gt;, dan &lt;a href=&#34;http://blog2.muhammadzaini.com/post/install-anbox-di-elementary-os-loki/&#34;&gt;Install Anbox di Elementary OS Loki&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Terus, kadang kan di Linux ini ada muncul kayak pesan-pesan error karena kesalahan kita sendiri dan tentunya harus ada orang yang paham teknis Linux untuk memperbaikinya. Nah, di sinilah intinya. Kalau kita membantu orang lain menggunakan atau menginstalkan Linux dan suatu saat muncul error, kan jadi repot deh. Apalagi kalau kita memang lagi susah diakses.&lt;/p&gt;
+
+&lt;p&gt;Terus, sayang juga kalau sudah diinstalkan Linux lalu kemudian dual boot, eh yang Linux jarang dipakai. Mendingan kan hapus aja. Tapi, tentu ada cara-cara hapusnya, nggak langsung delete partisi. Kalau langsung delete partisi, tentu aja GRUBnya hilang. Kalau hilang, ya kita repot lagi harus pakai OS portable Linux menggunakan USB bootable.&lt;/p&gt;
+
+&lt;p&gt;Nah, repot kan kalau kita menginstalkan Linux untuk user biasa. Mending pakai Windows aja. Nggak usah terpengaruh dengan para penganut agama Linux. Kecuali kalau orang itu programmer dan dia minta sendiri untuk diinstalkan Linux, baru deh kita bantu. Kalau ada error-error apa kan, dia bisa ngatasin sendiri. Iya lok?&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>تعليم قبل النكاح - المناكحات</title>
@@ -106,7 +146,7 @@
 
 &lt;p&gt;Buka &lt;a href=&#34;http://muhammadzaini.com&#34;&gt;http://muhammadzaini.com&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Pilih &lt;code&gt;&amp;lt;aplikasi web&amp;gt;&lt;/code&gt; di daftar menu yang di atas, habisnya judul &lt;code&gt;Zen&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Pilih &lt;code&gt;aplikasi web&lt;/code&gt; di daftar menu yang di atas, habisnya judul &lt;code&gt;Zen&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Cari bagian &lt;code&gt;penelitian&lt;/code&gt; dan klik &lt;code&gt;kontur&lt;/code&gt;.&lt;/p&gt;
 
@@ -454,16 +494,6 @@ Tidak Setuju	Sangat Setuju	Sangat Tidak Setuju	Tidak Setuju	Tidak Setuju	Sangat 
       
       <guid>http://blog2.muhammadzaini.com/post/masa-depan-yang-masih-abu-abu/</guid>
       <description>&lt;p&gt;Kutak tau bagaimana masa depan kita nanti. Yang kutau hanya berusaha.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Semangat</title>
-      <link>http://blog2.muhammadzaini.com/post/semangat/</link>
-      <pubDate>Wed, 26 Sep 2018 21:07:56 +0800</pubDate>
-      
-      <guid>http://blog2.muhammadzaini.com/post/semangat/</guid>
-      <description>&lt;p&gt;Semangat itu penting karena kadang kita nggak semangat.&lt;/p&gt;
 </description>
     </item>
     
