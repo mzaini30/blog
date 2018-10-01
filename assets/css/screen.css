@@ -589,3 +589,7 @@ img {
 table.gstl_50 {
     margin: 0;
 }
+
+div.gs-title {
+    text-align: justify;
+}
