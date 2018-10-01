@@ -85,11 +85,17 @@
 	<br>
 	<script type="text/javascript">
 		cari = function(x){
-			return x.q.value += x.teks.value
+			
+			situs = ''
+			teks = ''
+			situs = x.situs.value
+			teks = x.teks.value
+			return x.q.value = situs + teks
 		}
 	</script>
 	<form method="get" action="http://google.com/search" onsubmit="cari(this)">
-		<input type="hidden" name="q" value="site:blog2.muhammadzaini.com ">
+		<input type="hidden" name="q" value="">
+		<input type="hidden" name="situs" value="site:blog2.muhammadzaini.com ">
 		<input type="text" name="teks" placeholder="Cari">
 	</form>
 
