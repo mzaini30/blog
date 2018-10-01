@@ -84,9 +84,7 @@
 	<br>
 	<script type="text/javascript">
 		cari = function(x){
-			teks = x.teks.value
-			return x.q.value += teks
-			teks = ''
+			return x.q.value += x.teks.value
 		}
 	</script>
 	<form method="get" action="http://google.com/search" onsubmit="cari(this)">
