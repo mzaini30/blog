@@ -5,10 +5,27 @@
     <link>http://blog2.muhammadzaini.com/tags/pemrograman/</link>
     <description>Recent content in Pemrograman on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 29 Sep 2018 22:52:46 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Oct 2018 07:44:46 +0800</lastBuildDate>
     
 	<atom:link href="http://blog2.muhammadzaini.com/tags/pemrograman/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Catatan Mysql</title>
+      <link>http://blog2.muhammadzaini.com/post/catatan-php-dan-mysql/</link>
+      <pubDate>Tue, 02 Oct 2018 07:44:46 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/catatan-php-dan-mysql/</guid>
+      <description>Melacak lokasi MySQL
+which mysql Export database
+mysqldump -u username -p nama_database &amp;gt; psikoweb.sql Masuk ke MySQL
+mysql -u username -p Menampilkan database
+show databases; Membuat database
+create database psikoweb; Memilih database
+use psikoweb; Membuat table
+create table operator( id int (20) not null auto_increment, nama varchar (20) not null, updated timestamp, primary key (id) );    (adsbygoogle = window.adsbygoogle || []).push({});  Menampilkan table
+show tables; Menghapus table</description>
+    </item>
     
     <item>
       <title>Kontur: Skoring Otomatis Data Dari Google Form</title>

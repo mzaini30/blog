@@ -5,10 +5,164 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 01 Oct 2018 18:50:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Oct 2018 07:44:46 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Catatan Mysql</title>
+      <link>http://blog2.muhammadzaini.com/post/catatan-php-dan-mysql/</link>
+      <pubDate>Tue, 02 Oct 2018 07:44:46 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/catatan-php-dan-mysql/</guid>
+      <description>&lt;p&gt;Melacak lokasi MySQL&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;which mysql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Export database&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;mysqldump &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;u username &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;p nama_database &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; psikoweb.&lt;span style=&#34;color:#66d9ef&#34;&gt;sql&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Masuk ke MySQL&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;mysql &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;u username &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;p&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Menampilkan database&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;show&lt;/span&gt; databases;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Membuat database&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;create&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;database&lt;/span&gt; psikoweb;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Memilih database&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;use psikoweb;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Membuat table&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;create&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;table&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;operator&lt;/span&gt;(
+	id int (&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt; auto_increment,
+	nama varchar (&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;,
+	updated &lt;span style=&#34;color:#66d9ef&#34;&gt;timestamp&lt;/span&gt;,
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;primary&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;key&lt;/span&gt; (id)
+);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;
+
+&lt;p&gt;Menampilkan table&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;show&lt;/span&gt; tables;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Menghapus table&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;drop&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;table&lt;/span&gt; kucing;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Menghapus isi tabel&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;truncate&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;table&lt;/span&gt; kucing;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Menghapus database&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;drop&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;database&lt;/span&gt; bioskop;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Menampilkan form table&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;desc&lt;/span&gt; peserta;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;script async src=&#34;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&#34;&gt;&lt;/script&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block; text-align:center;&#34;
+     data-ad-layout=&#34;in-article&#34;
+     data-ad-format=&#34;fluid&#34;
+     data-ad-client=&#34;ca-pub-2408628281705149&#34;
+     data-ad-slot=&#34;1738060379&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;br class=&#34;br-adsbygoogle&#34;&gt;
+
+&lt;p&gt;Menambah Kolom Baru&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;alter&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;table&lt;/span&gt; nama_tabel &lt;span style=&#34;color:#66d9ef&#34;&gt;add&lt;/span&gt; nama_kolom varchar (&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Menghapus kolom&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;alter&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;table&lt;/span&gt; kucing &lt;span style=&#34;color:#66d9ef&#34;&gt;drop&lt;/span&gt; nama;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Insert data&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;insert&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;into&lt;/span&gt; kucing (nama, asal, kewarganegaraan) &lt;span style=&#34;color:#66d9ef&#34;&gt;values&lt;/span&gt; (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;anggora&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;jakarta&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;eropa&amp;#39;&lt;/span&gt;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pentingnya Backup Database Sql</title>
+      <link>http://blog2.muhammadzaini.com/post/pentingnya-backup-database-sql/</link>
+      <pubDate>Tue, 02 Oct 2018 07:28:58 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/pentingnya-backup-database-sql/</guid>
+      <description>&lt;p&gt;Bayangin lah kalau misalnya kamu habis install ulang. Nah, pasti hilangan dah tuh data di server lokal. Makanya, backup terus.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pentingnya Jadwal</title>
+      <link>http://blog2.muhammadzaini.com/post/pentingnya-jadwal/</link>
+      <pubDate>Tue, 02 Oct 2018 07:24:25 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/pentingnya-jadwal/</guid>
+      <description>&lt;p&gt;Pernah dengar perkataan ini?&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;الوقت كالسيف إن لم تقطع قطعك&lt;/p&gt;
+
+&lt;p&gt;Waktu itu seperti pedang. Kalau kamu tidak memotongnya, maka kamu akan dipotong olehnya.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, jadi jangan sampai waktu-waktumu yang sangat berharga itu dipakai buat sia-sia. Isilah semuanya dengan kegiatan yang berfaedah. Isilah semuanya dengan kegiatan yang bisa membuatmu bahagia di dunia dan akhirat. Entah itu nambah duit lah atau nambah pahala.&lt;/p&gt;
+
+&lt;p&gt;Nah, cara gampangnya tuh lah, pakai jadwal. Apalagi kalau kamu itu tipe orang yang nyantaiiii banget, nggak kepikiran buat ngapain hari ini atau saat ini. Contoh jadwal seperti di bawah ini:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Jam&lt;/th&gt;
+&lt;th&gt;Kegiatan&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Olahraga&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;Belajar&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;Nyari duit&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Setengah 11&lt;/td&gt;
+&lt;td&gt;Shalat dhuha&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;4 sore&lt;/td&gt;
+&lt;td&gt;Sedekah&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;10 malam&lt;/td&gt;
+&lt;td&gt;Muhasabah&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Apakah menjadi beban? Ya nggak sih. Apalagi kalau kamu orangnya yang santaiii banget. Kalau kamu orangnya gampang kepikiran mah, ya kepikiran terus.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pentingnya Multitasking</title>
+      <link>http://blog2.muhammadzaini.com/post/pentingnya-multitasking/</link>
+      <pubDate>Tue, 02 Oct 2018 07:24:15 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/pentingnya-multitasking/</guid>
+      <description>&lt;p&gt;Dunia serba cepat. Lakukan sekarang atau kamu akan tergilas.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mengapa Sebaiknya Tidak Semua Orang Menggunakan Linux</title>
