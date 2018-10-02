@@ -5,10 +5,22 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 02 Oct 2018 07:44:46 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Oct 2018 17:46:06 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Semuanya Berasal Dari Keinginan Yang Kuat Dan Ketidakinginan Yang Kuat</title>
+      <link>http://blog2.muhammadzaini.com/post/semuanya-berasal-dari-keinginan-yang-kuat-dan-ketidakinginan-yang-kuat/</link>
+      <pubDate>Tue, 02 Oct 2018 17:46:06 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/semuanya-berasal-dari-keinginan-yang-kuat-dan-ketidakinginan-yang-kuat/</guid>
+      <description>&lt;p&gt;Fenomena banyaknya mahasiswa yang tidak mengajukan judul skripsi membuatku berpikir bahwa keinginan yang kuat dan ketidakinginan yang kuat sangat mempengaruhi pergerakan kita. Kalau memang nggak pengen buat ngerjakan skripsi ya, biarpun semua alat, semua media sudah ada di depan mata, tetap aja nggak tergerak sama sekali buat ngerjakan skripsi.&lt;/p&gt;
+
+&lt;p&gt;So, aku harus selalu memiliki keinginan kuat dalam menggapai sesuatu yang aku inginkan. Keinginan itu harus kuat, nggak boleh kendor. Maka, sarana untuk menggapainya pun pasti akan menghampiri.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Catatan Mysql</title>
@@ -151,6 +163,17 @@
 &lt;/table&gt;
 
 &lt;p&gt;Apakah menjadi beban? Ya nggak sih. Apalagi kalau kamu orangnya yang santaiii banget. Kalau kamu orangnya gampang kepikiran mah, ya kepikiran terus.&lt;/p&gt;
+
+&lt;p&gt;Terus bagaimana jika waktumu nggak sefleksibel itu? Alias susah mencari waktu luang?&lt;/p&gt;
+
+&lt;p&gt;Maka, buat aja macam list yang harus dilakukan hari itu atau yang harus dilakukan setiap harinya (habit). Contohnya aja macam di bawah ini (pakai centang kalau sudah):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;☐ koding
+☐ peluang
+☐ sepeda
+✔ shalat dhuha @done (&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;-&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;-&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;05&lt;/span&gt;)
+☐ shalat tahajjud
+☐ skripsi @high&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Itu aku pakai package Sublime Text yang bernama &lt;a href=&#34;https://github.com/aziz/PlainTasks&#34;&gt;Plain Tasks&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
