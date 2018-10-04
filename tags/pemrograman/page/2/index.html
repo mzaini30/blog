@@ -90,20 +90,9 @@
 	</div>
 
 	<br>
-	<script type="text/javascript">
-		cari = function(x){
-			
-			situs = ''
-			teks = ''
-			situs = x.situs.value
-			teks = x.teks.value
-			return x.q.value = situs + teks
-		}
-	</script>
-	<form method="get" action="http://google.com/search" onsubmit="cari(this)">
-		<input type="hidden" name="q" value="">
-		<input type="hidden" name="situs" value="site:blog2.muhammadzaini.com ">
-		<input type="text" name="teks" placeholder="Cari">
+	
+	<form action="/search/" method="get">
+		<input type="text" name="s" placeholder="Cari">
 	</form>
 
 </header>

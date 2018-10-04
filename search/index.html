@@ -7,7 +7,7 @@
     
     <title>
       
-      Search Results - Zen
+      Hasil Pencarian - Zen
       
 		</title>
 
@@ -89,20 +89,9 @@
 	</div>
 
 	<br>
-	<script type="text/javascript">
-		cari = function(x){
-			
-			situs = ''
-			teks = ''
-			situs = x.situs.value
-			teks = x.teks.value
-			return x.q.value = situs + teks
-		}
-	</script>
-	<form method="get" action="http://google.com/search" onsubmit="cari(this)">
-		<input type="hidden" name="q" value="">
-		<input type="hidden" name="situs" value="site:blog2.muhammadzaini.com ">
-		<input type="text" name="teks" placeholder="Cari">
+	
+	<form action="/search/" method="get">
+		<input type="text" name="s" placeholder="Cari">
 	</form>
 
 </header>
@@ -113,21 +102,19 @@
 
 <section class="resume-section p-3 p-lg-5 d-flex flex-column">
   <div class="my-auto" >
-    <form action="http://blog2.muhammadzaini.com/search">
-      <input id="search-query" name="s"/>
-    </form>
+    
     <div id="search-results">
-     <h3>Matching pages</h3>
+     
     </div>
   </div>
 </section>
 
 <script id="search-result-template" type="text/x-js-template">
     <div id="summary-${key}">
-      <h4><a href="${link}">${title}</a></h4>
+      <h2><a href="${link}">${title}</a></h2>
       <p>${snippet}</p>
-      ${ isset tags }<p>Tags: ${tags}</p>${ end }
-      ${ isset categories }<p>Categories: ${categories}</p>${ end }
+      ${ isset tags }<p>Kategori: ${tags}</p>${ end }
+      ${ isset categories }<p>Kategori: ${categories}</p>${ end }
     </div>
 </script>
 
