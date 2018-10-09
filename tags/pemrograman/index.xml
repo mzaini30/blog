@@ -5,10 +5,19 @@
     <link>http://blog2.muhammadzaini.com/tags/pemrograman/</link>
     <description>Recent content in Pemrograman on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 07 Oct 2018 00:57:34 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 13:13:54 +0800</lastBuildDate>
     
 	<atom:link href="http://blog2.muhammadzaini.com/tags/pemrograman/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python: Menghitung Nilai Ujian Berdasarkan Berapa Poin Yang Salah</title>
+      <link>http://blog2.muhammadzaini.com/post/python-menghitung-nilai-ujian-berdasarkan-berapa-poin-yang-salah/</link>
+      <pubDate>Tue, 09 Oct 2018 13:13:54 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/python-menghitung-nilai-ujian-berdasarkan-berapa-poin-yang-salah/</guid>
+      <description>while True: salah = input(&amp;#39;Berapa salahnya: &amp;#39;) jumlah_soal = 20 print (jumlah_soal - salah) * 1.0 / jumlah_soal * 100</description>
+    </item>
     
     <item>
       <title>Sublime Auto Save</title>
@@ -51,7 +60,7 @@ show tables; Menghapus table</description>
     </item>
     
     <item>
-      <title>Kontur: Skoring Otomatis Data Dari Google Form</title>
+      <title>Kontur: Skoring Otomatis Data Dari Google Form (Per Skala/Variabel)</title>
       <link>http://blog2.muhammadzaini.com/post/kontur-skoring-otomatis-data-dari-google-form/</link>
       <pubDate>Sat, 29 Sep 2018 22:52:46 +0800</pubDate>
       
@@ -102,7 +111,7 @@ Install aplikasi tuh gampang aja ya. Udah ada macam App Storenya gitu. Tapi, gun
     </item>
     
     <item>
-      <title>Cara Install Linux Di Windows Tanpa Usb Dan Cd</title>
+      <title>Cara Install Linux Di Windows Tanpa Usb Dan Cd (Masih Belum Berhasil)</title>
       <link>http://blog2.muhammadzaini.com/post/cara-install-linux-di-windows-tanpa-usb-dan-cd/</link>
       <pubDate>Fri, 28 Sep 2018 07:06:04 +0800</pubDate>
       

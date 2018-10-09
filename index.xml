@@ -5,10 +5,22 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 07 Oct 2018 00:57:34 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 13:13:54 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python: Menghitung Nilai Ujian Berdasarkan Berapa Poin Yang Salah</title>
+      <link>http://blog2.muhammadzaini.com/post/python-menghitung-nilai-ujian-berdasarkan-berapa-poin-yang-salah/</link>
+      <pubDate>Tue, 09 Oct 2018 13:13:54 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/python-menghitung-nilai-ujian-berdasarkan-berapa-poin-yang-salah/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; True:
+	salah &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; input(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Berapa salahnya: &amp;#39;&lt;/span&gt;)
+	jumlah_soal &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; (jumlah_soal &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; salah) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; jumlah_soal &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>Sublime Auto Save</title>
@@ -1036,7 +1048,7 @@
     </item>
     
     <item>
-      <title>Kontur: Skoring Otomatis Data Dari Google Form</title>
+      <title>Kontur: Skoring Otomatis Data Dari Google Form (Per Skala/Variabel)</title>
       <link>http://blog2.muhammadzaini.com/post/kontur-skoring-otomatis-data-dari-google-form/</link>
       <pubDate>Sat, 29 Sep 2018 22:52:46 +0800</pubDate>
       
@@ -1355,7 +1367,7 @@ Tidak Setuju	Sangat Setuju	Sangat Tidak Setuju	Tidak Setuju	Tidak Setuju	Sangat 
     </item>
     
     <item>
-      <title>Cara Install Linux Di Windows Tanpa Usb Dan Cd</title>
+      <title>Cara Install Linux Di Windows Tanpa Usb Dan Cd (Masih Belum Berhasil)</title>
       <link>http://blog2.muhammadzaini.com/post/cara-install-linux-di-windows-tanpa-usb-dan-cd/</link>
       <pubDate>Fri, 28 Sep 2018 07:06:04 +0800</pubDate>
       

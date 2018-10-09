@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog2.muhammadzaini.com/post/python-menghitung-nilai-ujian-berdasarkan-berapa-poin-yang-salah/</loc>
+    <lastmod>2018-10-09T13:13:54+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog2.muhammadzaini.com/post/sublime-auto-save/</loc>
     <lastmod>2018-10-07T00:57:34+08:00</lastmod>
   </url>
@@ -350,13 +355,13 @@
   
   <url>
     <loc>http://blog2.muhammadzaini.com/tags/pemrograman/</loc>
-    <lastmod>2018-10-07T00:57:34+08:00</lastmod>
+    <lastmod>2018-10-09T13:13:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog2.muhammadzaini.com/post/</loc>
-    <lastmod>2018-10-07T00:57:34+08:00</lastmod>
+    <lastmod>2018-10-09T13:13:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -392,7 +397,7 @@
   
   <url>
     <loc>http://blog2.muhammadzaini.com/</loc>
-    <lastmod>2018-10-07T00:57:34+08:00</lastmod>
+    <lastmod>2018-10-09T13:13:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
