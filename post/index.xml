@@ -5,10 +5,19 @@
     <link>http://blog2.muhammadzaini.com/post/</link>
     <description>Recent content in Posts on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 09 Oct 2018 13:13:54 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 22:52:37 +0800</lastBuildDate>
     
 	<atom:link href="http://blog2.muhammadzaini.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python: Youtube Scrapping Channel</title>
+      <link>http://blog2.muhammadzaini.com/post/python-youtube-scrapping-channel/</link>
+      <pubDate>Tue, 09 Oct 2018 22:52:37 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/python-youtube-scrapping-channel/</guid>
+      <description>from bs4 import BeautifulSoup import re import requests import csv import time import json # pakai python 3.6 # version 1.1 added handling of youtube.com/channel/ # to already handling of youtube.com/user based channels # NOTE: url gets to youtube are throttled to 3 seconds between requests # this is an ad hoc attempt to look like a human to youtube # so youtube does not start limiting access wait_between_requests = 3 &amp;#34;&amp;#34;&amp;#34; scrape youtube channel to build table of contents html file and csv of video information for excel file note this code has a slow down delay to meet youtube terms of use &amp;#34;&amp;#34;&amp;#34; # set youtube channel name here # channel_name = &amp;#39;gjenkinslbcc&amp;#39; channel_name = input(&amp;#39;Masukkan id channel: &amp;#39;) youtube_base = &amp;#39;https://www.</description>
+    </item>
     
     <item>
       <title>Python: Menghitung Nilai Ujian Berdasarkan Berapa Poin Yang Salah</title>

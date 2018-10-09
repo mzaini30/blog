@@ -5,10 +5,314 @@
     <link>http://blog2.muhammadzaini.com/</link>
     <description>Recent content on Zen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 09 Oct 2018 13:13:54 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 22:52:37 +0800</lastBuildDate>
     
         <atom:link href="http://blog2.muhammadzaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python: Youtube Scrapping Channel</title>
+      <link>http://blog2.muhammadzaini.com/post/python-youtube-scrapping-channel/</link>
+      <pubDate>Tue, 09 Oct 2018 22:52:37 +0800</pubDate>
+      
+      <guid>http://blog2.muhammadzaini.com/post/python-youtube-scrapping-channel/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; bs4 &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; BeautifulSoup
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; re
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; requests
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; csv
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; time
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; json
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# pakai python 3.6&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# version 1.1 added handling of youtube.com/channel/&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#  to already handling of youtube.com/user based channels&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# NOTE: url gets to youtube are throttled to 3 seconds between requests&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# this is an ad hoc attempt to look like a human to youtube&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# so youtube does not start limiting access&lt;/span&gt;
+wait_between_requests &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
+
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34; scrape youtube channel to build table of contents html file and 
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    csv of video information for excel file
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    note this code has a slow down delay to meet youtube terms of use
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# set youtube channel name here&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# channel_name = &amp;#39;gjenkinslbcc&amp;#39;&lt;/span&gt;
+channel_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; input(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Masukkan id channel: &amp;#39;&lt;/span&gt;)
+
+
+youtube_base &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;https://www.youtube.com/&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# others to try&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#  gotreehouse  howgrowvideo  gjenkinslbcc howgrowvideo&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# by channel name:&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#  UCu8YylsPiu9XfaQC74Hr_Gw  UCn34N9fj3x92kOGnQQdHkAQ&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# UCH4aPBlmmW1Vgs0ykktCMUg&lt;/span&gt;
+
+parent_folder &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;# users or channel or empty&lt;/span&gt;
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_soup&lt;/span&gt;(url):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;open url and return BeautifulSoup object, 
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;       or None if site does not exist&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    
+    result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(url)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; result&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;status_code &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; None
+    time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sleep(wait_between_requests)  &lt;span style=&#34;color:#75715e&#34;&gt;# slow down to human speed&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; BeautifulSoup(result&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;html.parser&amp;#39;&lt;/span&gt;)
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;channel_section_links&lt;/span&gt;(channel_name):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;list of 
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;       { &amp;#39;title&amp;#39;: &amp;lt;section title&amp;gt;, 
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;         &amp;#39;link&amp;#39;: &amp;lt;url to section play lists&amp;gt; 
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;       }&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;global&lt;/span&gt; parent_folder
+
+    soup &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_soup(f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{youtube_base}/user/{channel_name}/playlists&amp;#39;&lt;/span&gt;)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; soup &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; None &lt;span style=&#34;color:#f92672&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;This channel does not exist.&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; soup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text:
+        url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{youtube_base}/channel/{channel_name}/playlists&amp;#39;&lt;/span&gt;
+        soup &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_soup(url)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; soup &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; None &lt;span style=&#34;color:#f92672&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;This channel does not exist.&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; soup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text:
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ValueError&lt;/span&gt;(
+                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;The channel does not exists: &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; channel_name)
+        parent_folder &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;channel/&amp;#39;&lt;/span&gt;
+
+    play_list_atags &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; \
+        soup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find_all(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;,
+                      {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;: re&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;compile(f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{channel_name}/playlists&amp;#39;&lt;/span&gt;)})
+    &lt;span style=&#34;color:#75715e&#34;&gt;# filter out non user play lists next&lt;/span&gt;
+    elements &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [{&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;: x&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip(),
+                 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;: fix_url(x[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;])} &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; play_list_atags
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; x&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;span &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt;
+                (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;shelf_id=0&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; x[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;])]
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# no sections, make up no sections section with default link&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(elements) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+        url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{youtube_base}{parent_folder}{channel_name}/playlists&amp;#39;&lt;/span&gt;
+        elements &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;no sections&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;: url}]
+        &lt;span style=&#34;color:#75715e&#34;&gt;# i.e.  https://youtube.com/gotreehouse/playlists&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; elements
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fix_url&lt;/span&gt;(url):  &lt;span style=&#34;color:#75715e&#34;&gt;# correct relative urls back to absolute urls&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; url[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;:
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; youtube_base &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; url
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; url
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_playlists&lt;/span&gt;(section):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;returns list of list of
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    { &amp;#39;title&amp;#39;: &amp;lt;playlist tile&amp;gt;, &amp;lt;link to all playlist videos&amp;gt; }&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;global&lt;/span&gt; parent_folder
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;  getting playlists for section: {section[&amp;#39;title&amp;#39;]}&amp;#34;&lt;/span&gt;)
+
+    soup &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_soup(section[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;])
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; soup &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt; None: &lt;span style=&#34;color:#75715e&#34;&gt;# no playlist, create dummy with default link&lt;/span&gt;
+        url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{youtube_base}{parent_folder}{channel_name}/videos&amp;#39;&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; [
+           {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;No Playlists&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;:url }]
+    atags &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; soup(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, class_&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;yt-uix-tile-link&amp;#39;&lt;/span&gt;)
+
+    playlists &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; a &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; atags:  &lt;span style=&#34;color:#75715e&#34;&gt;# find title and link&lt;/span&gt;
+        title &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; a&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; title &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Liked videos&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#75715e&#34;&gt;# skip these&lt;/span&gt;
+            url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fix_url(a[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;])
+            playlists&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;: title, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;: url})
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; playlists:  &lt;span style=&#34;color:#75715e&#34;&gt;# no playlists&lt;/span&gt;
+        url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{youtube_base}/{parent_folder}{channel_name}/videos&amp;#39;&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; [{&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;No Playlists&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;: url}]
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; playlists
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;parse_video&lt;/span&gt;(vurl):
+    &lt;span style=&#34;color:#75715e&#34;&gt;# return dict of&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# title, link, views, publication_date,&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# description, short_link, likes, dislikes&lt;/span&gt;
+
+    d &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;: vurl, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;views&amp;#39;&lt;/span&gt;: None, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;short_link&amp;#39;&lt;/span&gt;: vurl,
+         &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;likes&amp;#39;&lt;/span&gt;: None, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;dislikes&amp;#39;&lt;/span&gt;: None}
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# now get video page and pull information from it&lt;/span&gt;
+    vsoup &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_soup(vurl)
+
+    o &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vsoup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;)
+    vtitle &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; o&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip()
+    xending &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; - YouTube&amp;#39;&lt;/span&gt;
+    d[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vtitle[:&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;len(xending)] \
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; vtitle&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;endswith(xending) &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; vtitle
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;      processing video &amp;#39;{d[&amp;#39;title&amp;#39;]}&amp;#39;&amp;#34;&lt;/span&gt; )
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# o is used in the code following to&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# catch missing data targets for scrapping&lt;/span&gt;
+    o &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vsoup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;div&amp;#39;&lt;/span&gt;, class_&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;watch-view-count&amp;#39;&lt;/span&gt;)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; o:
+        views &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; o&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text
+        d[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;views&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(c &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; c &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; views &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; c &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0123456789&amp;#39;&lt;/span&gt;)
+
+    o &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vsoup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;strong&amp;#39;&lt;/span&gt;, class_&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;watch-time-text&amp;#39;&lt;/span&gt;)
+    d[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;publication_date&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; \
+        o&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text[len(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Published on &amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:] &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; o &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+
+    o &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vsoup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;div&amp;#39;&lt;/span&gt;, id&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;watch-description-text&amp;#39;&lt;/span&gt;)
+    d[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;description&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; o&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; o &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+
+    o &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vsoup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;meta&amp;#39;&lt;/span&gt;, itemprop&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;videoId&amp;#39;&lt;/span&gt;)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; o:
+        vid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; o[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;content&amp;#39;&lt;/span&gt;]
+        d[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;short_link&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;https://youtu.be/{vid}&amp;#39;&lt;/span&gt;
+
+    o &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vsoup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;button&amp;#39;&lt;/span&gt;,
+                   class_&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;like-button-renderer-like-button&amp;#39;&lt;/span&gt;)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; o:
+        o &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; o&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;span&amp;#39;&lt;/span&gt;, class_&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;yt-uix-button-content&amp;#39;&lt;/span&gt;)
+        d[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;likes&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; o&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; o &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+
+    o &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vsoup&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;button&amp;#39;&lt;/span&gt;,
+                   class_&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;like-button-renderer-dislike-button&amp;#39;&lt;/span&gt;)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; o:
+        o &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; o&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;span&amp;#39;&lt;/span&gt;, class_&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;yt-uix-button-content&amp;#39;&lt;/span&gt;)
+        d[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;dislikes&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; o&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; o &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; d
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;add_videos&lt;/span&gt;(playlist):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;find videos in playlist[link]
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    and add their info as playlist[videos] as list&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    surl &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; playlist[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;]
+    soup &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_soup(surl)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;    getting videos for playlist: {playlist[&amp;#39;title&amp;#39;]}&amp;#34;&lt;/span&gt;)
+
+    videos &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# items are list of video a links from list&lt;/span&gt;
+    items &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; soup(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, class_&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;yt-uix-tile-link&amp;#39;&lt;/span&gt;)
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# note first part of look get info from playlist page item,&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# and the the last part opens the video and gets more details&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(items) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; items:
+            d &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; dict()
+            vurl &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fix_url(i[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;href&amp;#39;&lt;/span&gt;])
+            t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;find_next(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;span&amp;#39;&lt;/span&gt;, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;aria-label&amp;#39;&lt;/span&gt;: True})
+            d[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;time&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; t&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; t &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;NA&amp;#39;&lt;/span&gt;
+
+            d&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;update(parse_video(vurl))
+            videos&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(d)
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:  &lt;span style=&#34;color:#75715e&#34;&gt;# must be only one video&lt;/span&gt;
+        d &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;time&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;NA&amp;#39;&lt;/span&gt;}
+        d&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;update(parse_video(surl))
+        videos&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(d)
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# add new key to this playlist of list of video infos&lt;/span&gt;
+    playlist[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;videos&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; videos
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;()
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;tag&lt;/span&gt;(t,c):
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;{t}&amp;gt;{c}&amp;lt;/{t}&amp;gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# return html tag with content&lt;/span&gt;
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;link&lt;/span&gt;(text, url): &lt;span style=&#34;color:#75715e&#34;&gt;# return a tag with content and link&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;a href=&amp;#34;{url}&amp;#34;&amp;gt;{text}&amp;lt;/a&amp;gt;&amp;#39;&lt;/span&gt;
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;html_out&lt;/span&gt;(channel, sections):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;create and write channel_name.html file&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    title &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;YouTube Channel {channel}&amp;#39;&lt;/span&gt;
+    f &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; open(f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{channel}.html&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;)
+    template &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;
+                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;#39;&lt;/span&gt;
+                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;title&amp;gt;{}&amp;lt;/title&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;
+                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;body&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{}&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;/html&amp;gt;&amp;#39;&lt;/span&gt;)
+
+    parts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; list()
+    parts&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(tag(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;h1&amp;#39;&lt;/span&gt;, title))
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; s &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; sections:
+        parts&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(tag(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;h2&amp;#39;&lt;/span&gt;,link(s[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;], s[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;])))
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; pl &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; s[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;playlists&amp;#39;&lt;/span&gt;]:
+            parts&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(tag(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;h3&amp;#39;&lt;/span&gt;, link(pl[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;], pl[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link&amp;#39;&lt;/span&gt;])))
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len(pl) &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+                parts&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;p&amp;gt;Empty Playlist&amp;lt;/p&amp;gt;&amp;#39;&lt;/span&gt;)
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+                parts&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;ol&amp;gt;&amp;#39;&lt;/span&gt;)
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; v &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; pl[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;videos&amp;#39;&lt;/span&gt;]:
+                    t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;time&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;NA&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; ({v[&amp;#39;time&amp;#39;]})&amp;#34;&lt;/span&gt;
+                    parts&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(tag(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;li&amp;#39;&lt;/span&gt;, link(v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;],
+                                     v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;short_link&amp;#39;&lt;/span&gt;]) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; t))
+                parts&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;/ol&amp;gt;&amp;#39;&lt;/span&gt;)
+    f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(template&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(channel, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(parts)))
+    f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;close()
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;csv_out&lt;/span&gt;(channel, sections):
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34; create and output channel_name.csv
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    file for import into a spreadsheet or DB&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    headers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;channel,section,playlist,video,&amp;#39;&lt;/span&gt;
+               &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;link,time,views,publication date,&amp;#39;&lt;/span&gt;
+               &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;likes,dislikes,description&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;)
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{channel}.csv&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; csv_file:
+        csvf &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; csv&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;writer(csv_file, delimiter&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;,&amp;#39;&lt;/span&gt;)
+        csvf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;writerow(headers)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; section &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; sections:
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; playlist &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; section[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;playlists&amp;#39;&lt;/span&gt;]:
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; video &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; playlist[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;videos&amp;#39;&lt;/span&gt;]:
+                    v &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; video
+                    line &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [channel,
+                            section[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;],
+                            playlist[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;],
+                            v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;]]
+                    line&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;extend([v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;short_link&amp;#39;&lt;/span&gt;],
+                                 v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;time&amp;#39;&lt;/span&gt;], v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;views&amp;#39;&lt;/span&gt;],
+                                 v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;publication_date&amp;#39;&lt;/span&gt;],
+                                 v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;likes&amp;#39;&lt;/span&gt;], v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;dislikes&amp;#39;&lt;/span&gt;],
+                                 v[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;description&amp;#39;&lt;/span&gt;]])
+                    csvf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;writerow(line)
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;process_channel&lt;/span&gt;(channel_name):
+    sections &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; channel_section_links(channel_name)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; section &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; sections:
+        section[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;playlists&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_playlists(section)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; playlist &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; section[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;playlists&amp;#39;&lt;/span&gt;]:
+            add_videos(playlist)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; sections
+
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; __name__ &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+    &lt;span style=&#34;color:#75715e&#34;&gt;# find channel name by going to channel&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# and picking last element from channel url&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# for example my channel url is:&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;#   https://www.youtube.com/user/gjenkinslbcc&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# my channel name is gjenkinslbcc in this url&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# this is set near top of this file&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# if the channel is of the form:&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# https://www.youtube.com/channel/xyz then supply xyz&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;finding sections for youtube.com {channel_name}&amp;#39;&lt;/span&gt;)
+    sections &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; process_channel(channel_name)
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# save sections structure to json file&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{channel_name}.json&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:
+        f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(json&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dumps(sections, sort_keys&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;True, indent&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;))
+
+    html_out(channel_name, sections)  &lt;span style=&#34;color:#75715e&#34;&gt;# create web page of channel links&lt;/span&gt;
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# create a csv file of video info for import into spreadsheet&lt;/span&gt;
+    csv_out(channel_name, sections)
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Program Complete,&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  &amp;#39;{channel_name}.html&amp;#39; and&amp;#34;&lt;/span&gt;
+          f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#39;{channel_name}.csv&amp;#39; have been&amp;#34;&lt;/span&gt; 
+          f&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; written to current directory&amp;#34;&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>Python: Menghitung Nilai Ujian Berdasarkan Berapa Poin Yang Salah</title>

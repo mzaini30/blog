@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      Python: Youtube Scrapping Channel - Zen
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    
+    
+
+    <script type="text/javascript" src="/jquery.min.js"></script>
+    <script type="text/javascript" src="/fuse.min.js"></script>
+    <script type="text/javascript" src="/jquery.mark.min.js"></script>
+
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Zen
+				
+			</a>
+		</h1>
+		<h2 class="blog-description">Rahasia</h2>
+		
+	</div>
+
+	<div class="nav">
+    
+		
+      <a class="nav- " role="presentation" href="/blog-lainnya/">&lt;Blog Lainnya&gt;</a>
+		
+      <a class="nav- " role="presentation" href="/email/">&lt;Email&gt;</a>
+		
+      <a class="nav- " role="presentation" href="/playstore/">&lt;Playstore&gt;</a>
+		
+      <a class="nav- " role="presentation" href="/whatsapp/">&lt;Whatsapp&gt;</a>
+		
+      <a class="nav- " role="presentation" href="/aplikasi-web/">Aplikasi Web</a>
+		
+      <a class="nav- " role="presentation" href="/blog/">Blog</a>
+		
+      <a class="nav- " role="presentation" href="/blogroll/">Blogroll</a>
+		
+      <a class="nav- " role="presentation" href="/cerpen/">Cerpen</a>
+		
+      <a class="nav- " role="presentation" href="/galeri/">Galeri</a>
+		
+      <a class="nav- " role="presentation" href="/keyboard-arabic/">Keyboard Arabic</a>
+		
+      <a class="nav- " role="presentation" href="/life/">Life</a>
+		
+      <a class="nav- " role="presentation" href="/mengajar/">Mengajar</a>
+		
+      <a class="nav- " role="presentation" href="/pemrograman/">Pemrograman</a>
+		
+      <a class="nav- " role="presentation" href="/pencapaian/">Pencapaian</a>
+		
+      <a class="nav- " role="presentation" href="/puisi/">Puisi</a>
+		
+      <a class="nav- " role="presentation" href="/quran/">Quran</a>
+		
+      <a class="nav- " role="presentation" href="/skripsi/">Skripsi</a>
+		
+	</div>
+
+	<br>
+	
+	<form action="/search/" method="get">
+		<input type="text" name="s" placeholder="Cari">
+	</form>
+
+</header>
+
+        
+<main class="content" role="main">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2408628281705149"
+     data-ad-slot="8834963527"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+  <article class="post">
+    <header class="post-header">
+      <h2 class="post-title">Python: Youtube Scrapping Channel</h2>
+      <section class="post-meta">
+        <time class="post-date">October 09, 2018</time>
+      </section>
+    </header>
+    <section class="post-content">
+
+      
+
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+<span style="color:#f92672">import</span> re
+<span style="color:#f92672">import</span> requests
+<span style="color:#f92672">import</span> csv
+<span style="color:#f92672">import</span> time
+<span style="color:#f92672">import</span> json
+
+<span style="color:#75715e"># pakai python 3.6</span>
+
+<span style="color:#75715e"># version 1.1 added handling of youtube.com/channel/</span>
+<span style="color:#75715e">#  to already handling of youtube.com/user based channels</span>
+
+<span style="color:#75715e"># NOTE: url gets to youtube are throttled to 3 seconds between requests</span>
+<span style="color:#75715e"># this is an ad hoc attempt to look like a human to youtube</span>
+<span style="color:#75715e"># so youtube does not start limiting access</span>
+wait_between_requests <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+
+<span style="color:#e6db74">&#34;&#34;&#34; scrape youtube channel to build table of contents html file and 
+</span><span style="color:#e6db74">    csv of video information for excel file
+</span><span style="color:#e6db74">    note this code has a slow down delay to meet youtube terms of use
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+
+<span style="color:#75715e"># set youtube channel name here</span>
+<span style="color:#75715e"># channel_name = &#39;gjenkinslbcc&#39;</span>
+channel_name <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;Masukkan id channel: &#39;</span>)
+
+
+youtube_base <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://www.youtube.com/&#39;</span>
+<span style="color:#75715e"># others to try</span>
+<span style="color:#75715e">#  gotreehouse  howgrowvideo  gjenkinslbcc howgrowvideo</span>
+<span style="color:#75715e"># by channel name:</span>
+<span style="color:#75715e">#  UCu8YylsPiu9XfaQC74Hr_Gw  UCn34N9fj3x92kOGnQQdHkAQ</span>
+<span style="color:#75715e"># UCH4aPBlmmW1Vgs0ykktCMUg</span>
+
+parent_folder <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>  <span style="color:#75715e"># users or channel or empty</span>
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_soup</span>(url):
+    <span style="color:#e6db74">&#34;&#34;&#34;open url and return BeautifulSoup object, 
+</span><span style="color:#e6db74">       or None if site does not exist&#34;&#34;&#34;</span>
+    
+    result <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
+    <span style="color:#66d9ef">if</span> result<span style="color:#f92672">.</span>status_code <span style="color:#f92672">!=</span> <span style="color:#ae81ff">200</span>: <span style="color:#66d9ef">return</span> None
+    time<span style="color:#f92672">.</span>sleep(wait_between_requests)  <span style="color:#75715e"># slow down to human speed</span>
+    <span style="color:#66d9ef">return</span> BeautifulSoup(result<span style="color:#f92672">.</span>text, <span style="color:#e6db74">&#39;html.parser&#39;</span>)
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">channel_section_links</span>(channel_name):
+    <span style="color:#e6db74">&#34;&#34;&#34;list of 
+</span><span style="color:#e6db74">       { &#39;title&#39;: &lt;section title&gt;, 
+</span><span style="color:#e6db74">         &#39;link&#39;: &lt;url to section play lists&gt; 
+</span><span style="color:#e6db74">       }&#34;&#34;&#34;</span>
+
+    <span style="color:#66d9ef">global</span> parent_folder
+
+    soup <span style="color:#f92672">=</span> get_soup(f<span style="color:#e6db74">&#39;{youtube_base}/user/{channel_name}/playlists&#39;</span>)
+    <span style="color:#66d9ef">if</span> soup <span style="color:#f92672">is</span> None <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;This channel does not exist.&#39;</span> <span style="color:#f92672">in</span> soup<span style="color:#f92672">.</span>text:
+        url <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;{youtube_base}/channel/{channel_name}/playlists&#39;</span>
+        soup <span style="color:#f92672">=</span> get_soup(url)
+        <span style="color:#66d9ef">if</span> soup <span style="color:#f92672">is</span> None <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;This channel does not exist.&#39;</span> <span style="color:#f92672">in</span> soup<span style="color:#f92672">.</span>text:
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(
+                <span style="color:#e6db74">&#39;The channel does not exists: &#39;</span> <span style="color:#f92672">+</span> channel_name)
+        parent_folder <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;channel/&#39;</span>
+
+    play_list_atags <span style="color:#f92672">=</span> \
+        soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74">&#39;a&#39;</span>,
+                      {<span style="color:#e6db74">&#39;href&#39;</span>: re<span style="color:#f92672">.</span>compile(f<span style="color:#e6db74">&#39;{channel_name}/playlists&#39;</span>)})
+    <span style="color:#75715e"># filter out non user play lists next</span>
+    elements <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;title&#39;</span>: x<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>strip(),
+                 <span style="color:#e6db74">&#39;link&#39;</span>: fix_url(x[<span style="color:#e6db74">&#39;href&#39;</span>])} <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> play_list_atags
+                <span style="color:#66d9ef">if</span> x<span style="color:#f92672">.</span>span <span style="color:#f92672">and</span>
+                (<span style="color:#e6db74">&#39;shelf_id=0&#39;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> x[<span style="color:#e6db74">&#39;href&#39;</span>])]
+
+    <span style="color:#75715e"># no sections, make up no sections section with default link</span>
+    <span style="color:#66d9ef">if</span> len(elements) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+        url <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;{youtube_base}{parent_folder}{channel_name}/playlists&#39;</span>
+        elements <span style="color:#f92672">=</span> [ {<span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#39;no sections&#39;</span>, <span style="color:#e6db74">&#39;link&#39;</span>: url}]
+        <span style="color:#75715e"># i.e.  https://youtube.com/gotreehouse/playlists</span>
+    <span style="color:#66d9ef">return</span> elements
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fix_url</span>(url):  <span style="color:#75715e"># correct relative urls back to absolute urls</span>
+    <span style="color:#66d9ef">if</span> url[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;/&#39;</span>:
+        <span style="color:#66d9ef">return</span> youtube_base <span style="color:#f92672">+</span> url
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> url
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_playlists</span>(section):
+    <span style="color:#e6db74">&#34;&#34;&#34;returns list of list of
+</span><span style="color:#e6db74">    { &#39;title&#39;: &lt;playlist tile&gt;, &lt;link to all playlist videos&gt; }&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">global</span> parent_folder
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;  getting playlists for section: {section[&#39;title&#39;]}&#34;</span>)
+
+    soup <span style="color:#f92672">=</span> get_soup(section[<span style="color:#e6db74">&#39;link&#39;</span>])
+    <span style="color:#66d9ef">if</span> soup <span style="color:#f92672">is</span> None: <span style="color:#75715e"># no playlist, create dummy with default link</span>
+        url <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;{youtube_base}{parent_folder}{channel_name}/videos&#39;</span>
+        <span style="color:#66d9ef">return</span> [
+           {<span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#39;No Playlists&#39;</span>, <span style="color:#e6db74">&#39;link&#39;</span>:url }]
+    atags <span style="color:#f92672">=</span> soup(<span style="color:#e6db74">&#39;a&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;yt-uix-tile-link&#39;</span>)
+
+    playlists <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> a <span style="color:#f92672">in</span> atags:  <span style="color:#75715e"># find title and link</span>
+        title <span style="color:#f92672">=</span> a<span style="color:#f92672">.</span>text
+        <span style="color:#66d9ef">if</span> title <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;Liked videos&#39;</span>: <span style="color:#75715e"># skip these</span>
+            url <span style="color:#f92672">=</span> fix_url(a[<span style="color:#e6db74">&#39;href&#39;</span>])
+            playlists<span style="color:#f92672">.</span>append({<span style="color:#e6db74">&#39;title&#39;</span>: title, <span style="color:#e6db74">&#39;link&#39;</span>: url})
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> playlists:  <span style="color:#75715e"># no playlists</span>
+        url <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;{youtube_base}/{parent_folder}{channel_name}/videos&#39;</span>
+        <span style="color:#66d9ef">return</span> [{<span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#39;No Playlists&#39;</span>, <span style="color:#e6db74">&#39;link&#39;</span>: url}]
+
+    <span style="color:#66d9ef">return</span> playlists
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse_video</span>(vurl):
+    <span style="color:#75715e"># return dict of</span>
+    <span style="color:#75715e"># title, link, views, publication_date,</span>
+    <span style="color:#75715e"># description, short_link, likes, dislikes</span>
+
+    d <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;link&#39;</span>: vurl, <span style="color:#e6db74">&#39;views&#39;</span>: None, <span style="color:#e6db74">&#39;short_link&#39;</span>: vurl,
+         <span style="color:#e6db74">&#39;likes&#39;</span>: None, <span style="color:#e6db74">&#39;dislikes&#39;</span>: None}
+
+    <span style="color:#75715e"># now get video page and pull information from it</span>
+    vsoup <span style="color:#f92672">=</span> get_soup(vurl)
+
+    o <span style="color:#f92672">=</span> vsoup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;title&#39;</span>)
+    vtitle <span style="color:#f92672">=</span> o<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>strip()
+    xending <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; - YouTube&#39;</span>
+    d[<span style="color:#e6db74">&#39;title&#39;</span>] <span style="color:#f92672">=</span> vtitle[:<span style="color:#f92672">-</span>len(xending)] \
+        <span style="color:#66d9ef">if</span> vtitle<span style="color:#f92672">.</span>endswith(xending) <span style="color:#66d9ef">else</span> vtitle
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;      processing video &#39;{d[&#39;title&#39;]}&#39;&#34;</span> )
+
+    <span style="color:#75715e"># o is used in the code following to</span>
+    <span style="color:#75715e"># catch missing data targets for scrapping</span>
+    o <span style="color:#f92672">=</span> vsoup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;watch-view-count&#39;</span>)
+    <span style="color:#66d9ef">if</span> o:
+        views <span style="color:#f92672">=</span> o<span style="color:#f92672">.</span>text
+        d[<span style="color:#e6db74">&#39;views&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(c <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> views <span style="color:#66d9ef">if</span> c <span style="color:#f92672">in</span> <span style="color:#e6db74">&#39;0123456789&#39;</span>)
+
+    o <span style="color:#f92672">=</span> vsoup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;strong&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;watch-time-text&#39;</span>)
+    d[<span style="color:#e6db74">&#39;publication_date&#39;</span>] <span style="color:#f92672">=</span> \
+        o<span style="color:#f92672">.</span>text[len(<span style="color:#e6db74">&#39;Published on &#39;</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>:] <span style="color:#66d9ef">if</span> o <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+    o <span style="color:#f92672">=</span> vsoup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>, id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;watch-description-text&#39;</span>)
+    d[<span style="color:#e6db74">&#39;description&#39;</span>] <span style="color:#f92672">=</span> o<span style="color:#f92672">.</span>text <span style="color:#66d9ef">if</span> o <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+    o <span style="color:#f92672">=</span> vsoup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;meta&#39;</span>, itemprop<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;videoId&#39;</span>)
+    <span style="color:#66d9ef">if</span> o:
+        vid <span style="color:#f92672">=</span> o[<span style="color:#e6db74">&#39;content&#39;</span>]
+        d[<span style="color:#e6db74">&#39;short_link&#39;</span>] <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;https://youtu.be/{vid}&#39;</span>
+
+    o <span style="color:#f92672">=</span> vsoup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;button&#39;</span>,
+                   class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;like-button-renderer-like-button&#39;</span>)
+    <span style="color:#66d9ef">if</span> o:
+        o <span style="color:#f92672">=</span> o<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;span&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;yt-uix-button-content&#39;</span>)
+        d[<span style="color:#e6db74">&#39;likes&#39;</span>] <span style="color:#f92672">=</span> o<span style="color:#f92672">.</span>text <span style="color:#66d9ef">if</span> o <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+    o <span style="color:#f92672">=</span> vsoup<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;button&#39;</span>,
+                   class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;like-button-renderer-dislike-button&#39;</span>)
+    <span style="color:#66d9ef">if</span> o:
+        o <span style="color:#f92672">=</span> o<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;span&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;yt-uix-button-content&#39;</span>)
+        d[<span style="color:#e6db74">&#39;dislikes&#39;</span>] <span style="color:#f92672">=</span> o<span style="color:#f92672">.</span>text <span style="color:#66d9ef">if</span> o <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;&#39;</span>
+
+    <span style="color:#66d9ef">return</span> d
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_videos</span>(playlist):
+    <span style="color:#e6db74">&#34;&#34;&#34;find videos in playlist[link]
+</span><span style="color:#e6db74">    and add their info as playlist[videos] as list&#34;&#34;&#34;</span>
+    surl <span style="color:#f92672">=</span> playlist[<span style="color:#e6db74">&#39;link&#39;</span>]
+    soup <span style="color:#f92672">=</span> get_soup(surl)
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;    getting videos for playlist: {playlist[&#39;title&#39;]}&#34;</span>)
+
+    videos <span style="color:#f92672">=</span> []
+
+    <span style="color:#75715e"># items are list of video a links from list</span>
+    items <span style="color:#f92672">=</span> soup(<span style="color:#e6db74">&#39;a&#39;</span>, class_<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;yt-uix-tile-link&#39;</span>)
+
+    <span style="color:#75715e"># note first part of look get info from playlist page item,</span>
+    <span style="color:#75715e"># and the the last part opens the video and gets more details</span>
+    <span style="color:#66d9ef">if</span> len(items) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> items:
+            d <span style="color:#f92672">=</span> dict()
+            vurl <span style="color:#f92672">=</span> fix_url(i[<span style="color:#e6db74">&#39;href&#39;</span>])
+            t <span style="color:#f92672">=</span> i<span style="color:#f92672">.</span>find_next(<span style="color:#e6db74">&#39;span&#39;</span>, {<span style="color:#e6db74">&#39;aria-label&#39;</span>: True})
+            d[<span style="color:#e6db74">&#39;time&#39;</span>] <span style="color:#f92672">=</span> t<span style="color:#f92672">.</span>text <span style="color:#66d9ef">if</span> t <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;NA&#39;</span>
+
+            d<span style="color:#f92672">.</span>update(parse_video(vurl))
+            videos<span style="color:#f92672">.</span>append(d)
+
+    <span style="color:#66d9ef">else</span>:  <span style="color:#75715e"># must be only one video</span>
+        d <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;time&#39;</span>: <span style="color:#e6db74">&#39;NA&#39;</span>}
+        d<span style="color:#f92672">.</span>update(parse_video(surl))
+        videos<span style="color:#f92672">.</span>append(d)
+
+    <span style="color:#75715e"># add new key to this playlist of list of video infos</span>
+    playlist[<span style="color:#e6db74">&#39;videos&#39;</span>] <span style="color:#f92672">=</span> videos
+    <span style="color:#66d9ef">print</span>()
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tag</span>(t,c):
+    <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#39;&lt;{t}&gt;{c}&lt;/{t}&gt;&#39;</span> <span style="color:#75715e"># return html tag with content</span>
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">link</span>(text, url): <span style="color:#75715e"># return a tag with content and link</span>
+    <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#39;&lt;a href=&#34;{url}&#34;&gt;{text}&lt;/a&gt;&#39;</span>
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">html_out</span>(channel, sections):
+    <span style="color:#e6db74">&#34;&#34;&#34;create and write channel_name.html file&#34;&#34;&#34;</span>
+    title <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;YouTube Channel {channel}&#39;</span>
+    f <span style="color:#f92672">=</span> open(f<span style="color:#e6db74">&#39;{channel}.html&#39;</span>,<span style="color:#e6db74">&#39;w&#39;</span>)
+    template <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;&lt;!doctype html&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&lt;html lang=&#34;en&#34;&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&lt;head&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>
+                <span style="color:#e6db74">&#39;&lt;meta charset=&#34;utf-8&#34;&gt;&#39;</span>
+                <span style="color:#e6db74">&#39;&lt;title&gt;{}&lt;/title&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&lt;/head&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>
+                <span style="color:#e6db74">&#39;&lt;body&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&lt;/body&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&lt;/html&gt;&#39;</span>)
+
+    parts <span style="color:#f92672">=</span> list()
+    parts<span style="color:#f92672">.</span>append(tag(<span style="color:#e6db74">&#39;h1&#39;</span>, title))
+
+    <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> sections:
+        parts<span style="color:#f92672">.</span>append(tag(<span style="color:#e6db74">&#39;h2&#39;</span>,link(s[<span style="color:#e6db74">&#39;title&#39;</span>], s[<span style="color:#e6db74">&#39;link&#39;</span>])))
+        <span style="color:#66d9ef">for</span> pl <span style="color:#f92672">in</span> s[<span style="color:#e6db74">&#39;playlists&#39;</span>]:
+            parts<span style="color:#f92672">.</span>append(tag(<span style="color:#e6db74">&#39;h3&#39;</span>, link(pl[<span style="color:#e6db74">&#39;title&#39;</span>], pl[<span style="color:#e6db74">&#39;link&#39;</span>])))
+            <span style="color:#66d9ef">if</span> len(pl) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+                parts<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;&lt;p&gt;Empty Playlist&lt;/p&gt;&#39;</span>)
+            <span style="color:#66d9ef">else</span>:
+                parts<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;&lt;ol&gt;&#39;</span>)
+                <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> pl[<span style="color:#e6db74">&#39;videos&#39;</span>]:
+                    t <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#66d9ef">if</span> v[<span style="color:#e6db74">&#39;time&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;NA&#39;</span> <span style="color:#66d9ef">else</span> f<span style="color:#e6db74">&#34; ({v[&#39;time&#39;]})&#34;</span>
+                    parts<span style="color:#f92672">.</span>append(tag(<span style="color:#e6db74">&#39;li&#39;</span>, link(v[<span style="color:#e6db74">&#39;title&#39;</span>],
+                                     v[<span style="color:#e6db74">&#39;short_link&#39;</span>]) <span style="color:#f92672">+</span> t))
+                parts<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;&lt;/ol&gt;&#39;</span>)
+    f<span style="color:#f92672">.</span>write(template<span style="color:#f92672">.</span>format(channel, <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(parts)))
+    f<span style="color:#f92672">.</span>close()
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">csv_out</span>(channel, sections):
+    <span style="color:#e6db74">&#34;&#34;&#34; create and output channel_name.csv
+</span><span style="color:#e6db74">    file for import into a spreadsheet or DB&#34;&#34;&#34;</span>
+    headers <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;channel,section,playlist,video,&#39;</span>
+               <span style="color:#e6db74">&#39;link,time,views,publication date,&#39;</span>
+               <span style="color:#e6db74">&#39;likes,dislikes,description&#39;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>)
+
+    <span style="color:#66d9ef">with</span> open(f<span style="color:#e6db74">&#39;{channel}.csv&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> csv_file:
+        csvf <span style="color:#f92672">=</span> csv<span style="color:#f92672">.</span>writer(csv_file, delimiter<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>)
+        csvf<span style="color:#f92672">.</span>writerow(headers)
+        <span style="color:#66d9ef">for</span> section <span style="color:#f92672">in</span> sections:
+            <span style="color:#66d9ef">for</span> playlist <span style="color:#f92672">in</span> section[<span style="color:#e6db74">&#39;playlists&#39;</span>]:
+                <span style="color:#66d9ef">for</span> video <span style="color:#f92672">in</span> playlist[<span style="color:#e6db74">&#39;videos&#39;</span>]:
+                    v <span style="color:#f92672">=</span> video
+                    line <span style="color:#f92672">=</span> [channel,
+                            section[<span style="color:#e6db74">&#39;title&#39;</span>],
+                            playlist[<span style="color:#e6db74">&#39;title&#39;</span>],
+                            v[<span style="color:#e6db74">&#39;title&#39;</span>]]
+                    line<span style="color:#f92672">.</span>extend([v[<span style="color:#e6db74">&#39;short_link&#39;</span>],
+                                 v[<span style="color:#e6db74">&#39;time&#39;</span>], v[<span style="color:#e6db74">&#39;views&#39;</span>],
+                                 v[<span style="color:#e6db74">&#39;publication_date&#39;</span>],
+                                 v[<span style="color:#e6db74">&#39;likes&#39;</span>], v[<span style="color:#e6db74">&#39;dislikes&#39;</span>],
+                                 v[<span style="color:#e6db74">&#39;description&#39;</span>]])
+                    csvf<span style="color:#f92672">.</span>writerow(line)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_channel</span>(channel_name):
+    sections <span style="color:#f92672">=</span> channel_section_links(channel_name)
+    <span style="color:#66d9ef">for</span> section <span style="color:#f92672">in</span> sections:
+        section[<span style="color:#e6db74">&#39;playlists&#39;</span>] <span style="color:#f92672">=</span> get_playlists(section)
+        <span style="color:#66d9ef">for</span> playlist <span style="color:#f92672">in</span> section[<span style="color:#e6db74">&#39;playlists&#39;</span>]:
+            add_videos(playlist)
+    <span style="color:#66d9ef">return</span> sections
+
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    <span style="color:#75715e"># find channel name by going to channel</span>
+    <span style="color:#75715e"># and picking last element from channel url</span>
+    <span style="color:#75715e"># for example my channel url is:</span>
+    <span style="color:#75715e">#   https://www.youtube.com/user/gjenkinslbcc</span>
+    <span style="color:#75715e"># my channel name is gjenkinslbcc in this url</span>
+    <span style="color:#75715e"># this is set near top of this file</span>
+    <span style="color:#75715e"># if the channel is of the form:</span>
+    <span style="color:#75715e"># https://www.youtube.com/channel/xyz then supply xyz</span>
+
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;finding sections for youtube.com {channel_name}&#39;</span>)
+    sections <span style="color:#f92672">=</span> process_channel(channel_name)
+
+    <span style="color:#75715e"># save sections structure to json file</span>
+    <span style="color:#66d9ef">with</span> open(f<span style="color:#e6db74">&#39;{channel_name}.json&#39;</span>,<span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
+        f<span style="color:#f92672">.</span>write(json<span style="color:#f92672">.</span>dumps(sections, sort_keys<span style="color:#f92672">=</span>True, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>))
+
+    html_out(channel_name, sections)  <span style="color:#75715e"># create web page of channel links</span>
+
+    <span style="color:#75715e"># create a csv file of video info for import into spreadsheet</span>
+    csv_out(channel_name, sections)
+
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Program Complete,</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">  &#39;{channel_name}.html&#39; and&#34;</span>
+          f<span style="color:#e6db74">&#34; &#39;{channel_name}.csv&#39; have been&#34;</span> 
+          f<span style="color:#e6db74">&#34; written to current directory&#34;</span>)</code></pre></div>
+
+      <p><a href="javascript:prompt('', 'subl \'/mnt/C48455A884559E2C/blog/content/post/python-youtube-scrapping-channel.md\''); void 0;">Edit</a></p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="tags post-meta">
+        Kategori
+        <a href="http://blog2.muhammadzaini.com/tags/pemrograman/">pemrograman</a>
+          
+      </section>
+    </footer>
+
+  <section class="tags post-meta">
+    <h1>Baca Juga</h1>
+      
+        
+        <header class="post-header">
+          <h5 class="post-title related-post"><a href="/post/python-menghitung-nilai-ujian-berdasarkan-berapa-poin-yang-salah/">Python: Menghitung Nilai Ujian Berdasarkan Berapa Poin Yang Salah</a></h5>
+        </header>
+      
+        
+        <header class="post-header">
+          <h5 class="post-title related-post"><a href="/post/sublime-auto-save/">Sublime Auto Save</a></h5>
+        </header>
+      
+        
+        <header class="post-header">
+          <h5 class="post-title related-post"><a href="/post/apa-itu-aplikasi-kaligrafi-dan-bagaimana-cara-menggunakannya/">Apa Itu Aplikasi Kaligrafi Dan Bagaimana Cara Menggunakannya</a></h5>
+        </header>
+      
+        
+          <br class="br-adsbygoogle">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-ij+g-1s-3p+dp"
+     data-ad-client="ca-pub-2408628281705149"
+     data-ad-slot="4762816560"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        
+        <header class="post-header">
+          <h5 class="post-title related-post"><a href="/post/catatan-php-dan-mysql/">Catatan Mysql</a></h5>
+        </header>
+      
+        
+        <header class="post-header">
+          <h5 class="post-title related-post"><a href="/post/kontur-skoring-otomatis-data-dari-google-form/">Kontur: Skoring Otomatis Data Dari Google Form (Per Skala/Variabel)</a></h5>
+        </header>
+      
+  </section>
+
+  
+
+  </article>
+
+  <script src="https://utteranc.es/client.js"
+        repo="mzaini30/blog"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+  <br>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2408628281705149"
+     data-ad-slot="8834963527"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</main>
+
+        
+<footer class="site-footer">
+
+	<p class="blog-description">Jangan lewatkan update blog ini dengan mengklik salah satu media sosial di bawah ini ya.</p>
+	<br>
+
+	<div class="media-sosial">
+		<a href="http://fb.com/blogfromzen">
+			<img src="/gambar/media sosial/facebook.jpg">
+		</a>
+		<a href="http://twitter.com/mzaini30">
+			<img src="/gambar/media sosial/twitter.png">
+		</a>
+		<a href="https://line.me/R/ti/g/fpn4qvJ6SD">
+			<img src="/gambar/media sosial/line.png">
+		</a>
+		<a href="http://t.me/zensharing">
+			<img src="/gambar/media sosial/telegram.jpg">
+		</a>
+		<a href="https://github.com/mzaini30/blog/releases/download/v1.0/zen.apk">
+			<img src="/gambar/media sosial/android.jpg">
+		</a>
+	</div>
+	<br>
+
+	<p class="blog-description">Anggota dari:</p>
+	<br>
+
+	<div class="media-sosial">
+		<a href="http://github.com/mzaini30">
+			<img src="/gambar/member of/github.png">
+		</a>
+		<a href="https://www.youtube.com/channel/UCVgxg27PFIbur2ovDFVAAvw">
+			<img src="/gambar/member of/flat earth.jpg">
+		</a>
+		<a href="http://isykarima.com">
+			<img src="/gambar/member of/isy karima.jpeg">
+		</a>
+		<a href="http://psikologi.fisip-unmul.ac.id">
+			<img src="/gambar/member of/psikologi unmul.jpg">
+		</a>
+		<a href="http://warungblogger.org">
+			<img src="/gambar/member of/warung blogger.jpg">
+		</a>
+		<a href="https://t.me/elementaryID">
+			<img src="/gambar/member of/elementary os.jpg">
+		</a>
+		<a href="http://komunitasodop.blogspot.com/">
+			<img src="/gambar/member of/one day one post.jpg">
+		</a>
+	</div>
+	<br>
+
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  <section class="twitter"><a class="icon-twitter" href="https://twitter.com/mzaini30"> mzaini30</a></section>
+  <section class="facebook"><a class="icon-facebook" href="https://www.facebook.com/mzaini30"> mzaini30</a></section>
+  <section class="copyright">&copy; 2018 Zen</section>
+  <section class="poweredby"><a href="http://thedarkroast.com/arabica">Arabica</a> theme by Sean Lunsford. Published with <a href="https://gohugo.io">Hugo</a>.</section>
+</footer>
+
+
+
+<script type="text/javascript">
+	
+	if (location.host == 'localhost:1313'){
+		
+		
+		$('.br-adsbygoogle, .adsbygoogle').hide()
+	}
+</script>
+    </body>
+</html>
