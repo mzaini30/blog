@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Menu</div>
+	<div class="list-group">
+		<a href="mailto:muhzaini30@gmail.com" class="list-group-item">Email</a>
+		<a href="http://muhammadzaini.com" class="list-group-item">Portofolio</a>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">Kategori</div>
+	<div class="list-group">
+		{% assign list_kategori = site.categories %}
+		{% for kategori in list_kategori %}
+			<a href="/kategori/{{ kategori[0] }}" class="list-group-item">{{ kategori[0] | capitalize }}</a>
+		{% endfor %}
+	</div>
+</div>

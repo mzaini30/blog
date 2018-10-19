@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zen</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/bin/bootstrap/css/bootstrap.min.css">
+	<style type="text/css">
+		{% include style.css %}
+	</style>
+</head>
+<body>
+	<div class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-heading"><a href="/" class="navbar-brand">Zen</a></div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 theia">
+				<div class="theiaStickySidebar">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							{{ page.title }}
+							&nbsp;
+							<div class="badge">{{ page.category }}</div>
+						</div>
+						<div class="panel-body">
+							{{ content }}
+						</div>
+					</div>
+					<script src="https://utteranc.es/client.js"
+						repo="mzaini30/blog"
+						issue-term="pathname"
+						theme="github-light"
+						crossorigin="anonymous"
+						async>
+					</script>
+				</div>
+			</div>
+			<div class="col-sm-4 theia">
+				<div class="theiaStickySidebar">
+					{% include sidebar.html %}
+				</div>
+			</div>
+		</div>
+		<hr>
+		<center>
+			<p>&copy; Zen</p>
+		</center>
+	</div>
+	<script type="text/javascript" src="/bin/jquery.min.js"></script>
+	<script type="text/javascript" src="/bin/ResizeSensor.min.js"></script>
+	<script type="text/javascript" src="/bin/theia-sticky-sidebar.min.js"></script>
+	<script type="text/javascript">
+		$('.theia').theiaStickySidebar({
+			additionalMarginTop: 20,
+			additionalMarginBottom: 20
+		})
+	</script>
+</body>
+</html>
