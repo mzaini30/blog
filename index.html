@@ -4,9 +4,8 @@ layout: default
 
 {% for post in paginator.posts %}
 	<div class="panel panel-default">
-		<div class="panel-heading">
+		<div class="panel-heading list-group-item">
 			<a href="{{ post.url }}">{{ post.title }}</a>
-			&nbsp;
 			<div class="badge">{{ post.category }}</div>
 		</div>
 		<div class="panel-body">
