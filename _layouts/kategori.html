@@ -8,11 +8,12 @@ layout: kosongan
 			{% for post in site.posts %}
 				{% if post.category == page.title %}
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading list-group-item">
 							<a href="{{ post.url }}">{{ post.title }}</a>
+							<div class="badge">{{ post.category }}</div>
 						</div>
 						<div class="panel-body">
-							{{ post.content }}
+							{{ post.excerpt }}
 						</div>
 					</div>
 				{% endif %}

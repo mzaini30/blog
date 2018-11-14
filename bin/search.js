@@ -8,7 +8,7 @@
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
         appendString += '<div class="panel panel-default">';
-        appendString += '<div class="panel-heading list-group-item"><a href="' + item.url + '">' + item.title + '</a> <div class="badge">' + item.category + '</div></div>';
+        appendString += '<div class="panel-heading list-group-item"><a href="' + item.url + '">' + item.title + '</a> <a href="/kategori/' + item.category + '" class="badge">' + item.category + '</a></div>';
         appendString += '<div class="panel-body">' + item.content.substring(0, 150) + '...</div>';
         appendString += '</div>';
       }
