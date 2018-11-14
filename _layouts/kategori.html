@@ -14,6 +14,7 @@ layout: kosongan
 						</div>
 						<div class="panel-body">
 							{{ post.excerpt }}
+							<p><em>&mdash; {{ post.date | date_to_long_string }}</em></p>
 						</div>
 					</div>
 				{% endif %}
