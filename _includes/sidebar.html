@@ -12,7 +12,7 @@
 <div class="panel panel-default">
 	<div class="panel-heading">Kategori</div>
 	<div class="list-group">
-		{% assign list_kategori = site.categories %}
+		{% assign list_kategori = site.categories | sort %}
 		{% for kategori in list_kategori %}
 			<a href="/kategori/{{ kategori[0] }}" class="list-group-item">{{ kategori[0] | capitalize }}</a>
 		{% endfor %}
