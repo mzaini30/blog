@@ -13,11 +13,13 @@ layout: kosongan
 				<div class="panel-body">
 					{{ content }}
 					<p><em>&mdash; {{ page.date | date_to_long_string }}</em></p>
-					<div class="sharethis-inline-share-buttons"></div>
+					<!-- <div class="sharethis-inline-share-buttons"></div> -->
 					<div class="panel panel-default">
 						<div class="panel-heading">Bagikan</div>
 						<div class="list-group">
 							<a href="http://muhammadzaini.com/link/?url={{ site.url }}{{ page.url }}" target="_blank" class="list-group-item">Buka di Browser</a>
+							<a href="https://www.facebook.com/sharer.php?t={{ page.title }}&u={{ site.url }}{{ page.url }}" target="_blank" class="list-group-item">Facebook</a>
+							<a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" target="_blank" class="list-group-item">Twitter</a>
 						</div>
 					</div>
 				</div>
