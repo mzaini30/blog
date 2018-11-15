@@ -13,7 +13,8 @@ layout: kosongan
 				<div class="panel-body">
 					{{ content }}
 					<p><em>&mdash; {{ page.date | date_to_long_string }}</em></p>
-					<div class="sharethis-inline-share-buttons"></div>
+					<div class="form-group"><label>Link Artikel Ini: <input class="form-control" type="text" disabled value="{{ site.url }}{{ page.url }}"/></label></div>
+					<!-- <div class="sharethis-inline-share-buttons"></div> -->
 					<!-- <div class="panel panel-default">
 						<div class="panel-heading">Bagikan</div>
 						<div class="list-group">
