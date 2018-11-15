@@ -6,3 +6,7 @@ paginate: 10
 
 plugins:
   - jekyll-paginate
+  
+name: Zen
+description: Developer
+url: http://blog2.muhammadzaini.com
