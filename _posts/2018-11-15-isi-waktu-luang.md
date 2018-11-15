@@ -19,6 +19,18 @@ Apalagi kan yang namanya mempelajari dan mengajarkan Alquran itu adalah kegiatan
 
 > Sebaik-baik kalian adalah yang mempelajari Alquran dan mengamalkannya.
 
+## Aplikasi untuk Membantu Murajaah
+
+Oh iya, buat kamu yang pengen termotivasi dalam memurajaah Quran plus sebagai mutabaah buat menandai capaian murajaahmu. Nah, begini tampilannya:
+
+![](/gambar/quran/preview.png)
+
+Jadi, cara pakai aplikasi itu, di setiap juz dibagi jadi 4 bagian yang mewakili seperempat pertama, kedua, ketiga, dan keempat. Nah, kalau kamu sudah murajaah seperempat kedua dari juz 3 misalnya, klik aja bagian 2 yang di bawah juz 3. Gampang kan?
+
+Oh iya, aplikasi ini ada di Play Store:
+
+![](/gambar/quran/play-store.png)
+
 # Membaca Buku
 
 Tau nggak kawan, kalau yang namanya media sosial itu makan waktu kita banget.
