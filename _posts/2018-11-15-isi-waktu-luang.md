@@ -21,6 +21,16 @@ Apalagi kan yang namanya mempelajari dan mengajarkan Alquran itu adalah kegiatan
 
 # Membaca Buku
 
+Tau nggak kawan, kalau yang namanya media sosial itu makan waktu kita banget.
+
+Mending kita ganti dengan membaca buku.
+
+Kenapa? Padahal kan bagus ya, saling berinteraksi dengan kawan-kawan di Facebook, Instagram, Twitter.
+
+Tapi kamu yakin itu yang kamu lakukan? Biasanya sih kalau di media sosial itu, masih mending sih stalking. Tapi seringnya sih kita buka-buka yang lain, baca berita, nyari lucu-lucuan, share hoax, ghibahin sana-sini. So, apa bedanya coba sama membaca buku?
+
+Ups. Ini _bukan_ untuk jelek-jelekin media sosial ya, cuma mau ngajak baca buku aja. Maafkan cara penyampaianku yang frontal banget ya.
+
 # Blogging
 
 Menulis bisa menjadi terapi loh. Mengapa? Karena menulis dapat menjadi sebagai media release emosi, tempat kita menuangkan segala keluh-kesah kita.
