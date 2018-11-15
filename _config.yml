@@ -6,6 +6,7 @@ paginate: 10
 
 plugins:
   - jekyll-paginate
+  - jekyll-feed
   
 name: Zen
 description: Developer
