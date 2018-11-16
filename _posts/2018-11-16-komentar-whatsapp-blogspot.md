@@ -11,4 +11,11 @@ Nah, kita buat yang lebih keren nih: Komentar blog berbasis Whatsapp.
 
 Wowww....
 
-Keren
+Keren...
+
+Oke, ayo kita mulai..
+
+# Mulai Koding
+
+Buka Notepad
+
