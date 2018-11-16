@@ -22,7 +22,7 @@ layout: kosongan
 				<button class='btn btn-success wa-kirim'>Kirimkan Komentar</button>
 				<div class="panel panel-default">
 					<div class="panel-heading">Tulisan lainnya</div>
-					<div class="panel-body list-group">
+					<div class="list-group">
 						{% assign random = site.time | date: "%s" %}
 						{% assign acak_judul = page.title.size %}
 						{% assign angka_postingan = page.date | date: "%s" | plus: random | plus: acak_judul %}
