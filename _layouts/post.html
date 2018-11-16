@@ -14,6 +14,13 @@ layout: kosongan
 					{{ content }}
 					<p><em>&mdash; {{ page.date | date_to_long_string }}</em></p>
 					<div class="form-group"><label for="link">Link Artikel Ini:</label> <input id="link" class="form-control" type="text" value="{{ site.url }}{{ page.url }}"/></div>
+					
+<div class='form-group'>
+  <label for='komentar-wa'>Komentar Whatsapp:</label>
+  <textarea id='komentar-wa' class='form-control wa-teks' rows='5' placeholder='Masukkan komentarmu di sini'></textarea>
+</div>
+<button class='btn btn-success wa-kirim'>Kirimkan Komentar</button>
+					
 					<!-- <div class="sharethis-inline-share-buttons"></div> -->
 					<!-- <div class="panel panel-default">
 						<div class="panel-heading">Bagikan</div>
