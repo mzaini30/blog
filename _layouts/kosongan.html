@@ -9,12 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="/bin/style.css">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<!-- <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5bec9c4c443c26001b064fee&product=inline-share-buttons' async='async'></script> -->
-{% include iklan-otomatis.html %}
+	{% include iklan-otomatis.html %}
 </head>
 <body>
-
-
-
 	<div class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header"><a href="/" class="navbar-brand">Zen</a></div>
@@ -37,12 +34,25 @@
 			additionalMarginTop: 20,
 			additionalMarginBottom: 20
 		})
+
+		$('.wa-kirim').click(function(){
+			nomor_whatsapp = '6281545143654'
+			template = "*Judul*%3A%20{{ page.title | replace: ' ', '%20' | replace: ':', '%3A' }}%0A*Link*%3A%20{{ site.url | replace: ':', '%3A' }}{{ page.url | replace: ':', '%3A' }}%0A%0A*Komentar*%3A%0A%0A"
+			isi = $('.wa-teks').val().replace(/ /g, '%20').replace(/:/g, '%3A').replace(/\n/g, '%0A')
+			hasil = 'https://api.whatsapp.com/send?phone=' + nomor_whatsapp + '&text=' + template + isi
+			location.href = hasil
+			// https://api.whatsapp.com/send?phone=1&text=*Judul*%3A%20lorem%0A*Link*%3A%20lorem2%0A%0A*Komentar*%3A%0A%0Alorem3
+			// console.log(hasil)
+		})
 	</script>
+
+	<!-- ngelihatin yang online -->
 	<div style="position: fixed; left: 10px; bottom: 0;">
 	<script id="_wauttn">var _wau = _wau || []; _wau.push(["dynamic", "b79nqjyg3k", "ttn", "c4302bffffff", "small"]);</script><script async src="//waust.at/d.js"></script>
 	</div>
 
-<a href="https://github.com/mzaini30/blog" target='_blank'><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+	<!-- github ribbon -->
+	<a href="https://github.com/mzaini30/blog" target='_blank'><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
 
 </body>
 </html>
