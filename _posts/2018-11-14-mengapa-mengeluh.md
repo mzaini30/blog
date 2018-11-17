@@ -2,7 +2,7 @@
 title: Buat Apa Sih Kita Mengeluh?
 category: life
 layout: post
-date: 2018-11-14 21:21:00 +8
+date: 2018-11-14 21:21:00
 ---
 
 Mengapa kita mengeluh? Mengapa kita berhenti berusaha? Mengapa kita berhenti mengupayakan sesuatu? Apa kita lelah? Apa kita kurang sabar? Apa kita merasa berat, merasa kepayahan dengan usaha yang kita lakukan?

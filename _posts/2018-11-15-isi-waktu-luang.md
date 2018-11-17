@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Isilah Waktu Luangmu dengan Quran, Buku, dan Blogging"
-date: 2018-11-15 12:34:00 +8
+date: 2018-11-15 12:34:00
 category: blogging
 ---
 

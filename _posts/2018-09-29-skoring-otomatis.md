@@ -1,6 +1,6 @@
 ---
 title: "Kontur: Skoring Otomatis Data Dari Google Form (Per Skala/Variabel)"
-date: 2018-09-29 22:52:46 +8
+date: 2018-09-29 22:52:46
 category: pemrograman
 layout: post
 ---
