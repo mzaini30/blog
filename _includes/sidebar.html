@@ -26,4 +26,13 @@
 	</div>
 </div>
 
+<div class="panel panel-default">
+	<div class="panel-heading">Komunitas</div>
+	<div class="list-group">
+		{% for x in site.komunitas %}
+			<a {% if x.link %}href="{{ x.link }}"{% endif %} class="list-group-item" target='_blank'><img src='{{ x.gambar }}'></a>
+		{% endfor %}
+	</div>
+</div>
+
 <div style="width: 100%; height: 50px;"></div>
