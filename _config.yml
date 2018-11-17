@@ -12,3 +12,5 @@ plugins:
 name: Zen
 description: Developer
 url: http://blog2.muhammadzaini.com
+
+timezone: Asia/Makassar

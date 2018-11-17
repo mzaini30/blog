@@ -2,7 +2,7 @@
 title: Mengapa Kita Lebih Memilih Bermalas-malasan?
 layout: post
 category: life
-date: 2018-11-17 05:26:00 +0800
+date: 2018-11-17 05:26:00
 ---
 
 Apakah dengan bermalas-malasan maka kita berpikir bahwa semua kerjaan kita telah selesai?
