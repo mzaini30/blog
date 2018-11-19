@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/bin/bootstrap/css/bootstrap.min.css">
-	<script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
+	<script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
 	<link rel="stylesheet" type="text/css" href="/bin/pygment/default.css">
 	<link rel="stylesheet" type="text/css" href="/bin/style.css">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -39,8 +39,8 @@
 
 
 	<script type="text/javascript" src="/bin/jquery.min.js"></script>
-<script>
-$('.wa-kirim').click(function(){
+	<script>
+		$('.wa-kirim').click(function(){
 			nomor_whatsapp = '6281545143654'
 			template = "*Judul*%3A%20{{ page.title | replace: ' ', '%20' | replace: ':', '%3A' }}%0A*Link*%3A%20{{ site.url | replace: ':', '%3A' }}{{ page.url | replace: ':', '%3A' }}%0A%0A*Komentar*%3A%0A%0A"
 			isi = $('.wa-teks').val().replace(/ /g, '%20').replace(/:/g, '%3A').replace(/\n/g, '%0A')
@@ -49,18 +49,18 @@ $('.wa-kirim').click(function(){
 			// https://api.whatsapp.com/send?phone=1&text=*Judul*%3A%20lorem%0A*Link*%3A%20lorem2%0A%0A*Komentar*%3A%0A%0Alorem3
 			// console.log(hasil)
 		})
-			
-			twemoji.parse($('body'))
-</script>
+					
+		twemoji.parse(document.body)
+	</script>
 	<script type="text/javascript" src="/bin/ResizeSensor.min.js"></script>
-		<script type="text/javascript" src="/bin/theia-sticky-sidebar.min.js"></script>
+	<script type="text/javascript" src="/bin/theia-sticky-sidebar.min.js"></script>
 	<script type="text/javascript">
 		$('.theia').theiaStickySidebar({
 			additionalMarginTop: 20,
 			additionalMarginBottom: 20
 		})
 
-			</script>
+	</script>
 
 	
 </body>
