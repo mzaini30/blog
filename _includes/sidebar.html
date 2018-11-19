@@ -23,7 +23,7 @@
 	<div class="list-group">
 		{% assign list_menu = site.menu | sort: "nama" %}
 		{% for x in list_menu %}
-			<a href="{{ x.link }}" style='text-transform: capitalize;' class="list-group-item">{{ x.nama }}</a>
+			<a target='_blank' href="{{ x.link }}" style='text-transform: capitalize;' class="list-group-item">{{ x.nama }}</a>
 		{% endfor %}
 	</div>
 </div>
