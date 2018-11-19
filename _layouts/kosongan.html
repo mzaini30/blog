@@ -7,11 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/bin/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/bin/emoji/emoji.css">
-	<script type="text/javascript" src="/bin/emoji/emoji.js"></script>
-	<script>
-	emoji.emojifyWholePage()
-	</script>
+	<script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/bin/pygment/default.css">
 	<link rel="stylesheet" type="text/css" href="/bin/style.css">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -54,7 +50,7 @@ $('.wa-kirim').click(function(){
 			// console.log(hasil)
 		})
 			
-			
+			twemoji.parse($('body'))
 </script>
 	<script type="text/javascript" src="/bin/ResizeSensor.min.js"></script>
 		<script type="text/javascript" src="/bin/theia-sticky-sidebar.min.js"></script>
