@@ -9,10 +9,22 @@
 	</div>
 </div>
 
+<!--
 <div class="panel panel-default">
 	<div class="panel-heading">Menu</div>
 	<div class="list-group">
 		<a href="http://muhammadzaini.com" class="list-group-item">Portofolio</a>
+	</div>
+</div>
+-->
+
+<div class="panel panel-default">
+	<div class="panel-heading">Menu</div>
+	<div class="list-group">
+		{% assign list_menu = site.menu | sort: "nama" %}
+		{% for x in list_menu %}
+			<a href="{{ x.link }}" style='text-transform: capitalize;' class="list-group-item">{{ x.nama }}</a>
+		{% endfor %}
 	</div>
 </div>
 
