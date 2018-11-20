@@ -1,5 +1,5 @@
 ---
-title: "Kisi-kisi Ujian Bahasa Arab"
+title: "Kisi-kisi Ujian Bahasa Arab untuk SMA"
 date: 2018-11-20 22:14:00
 category: bahasa arab
 layout: post
