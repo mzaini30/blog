@@ -10,3 +10,58 @@ layout: post
 - ism isyaroh (kata tunjuk)
 - ism makrifat dan ism nakiroh
 - dhomir munfasil
+
+# Kelas 2
+
+يذهب
+
+يقرأ
+
+يخرج
+
+يسيل
+
+يدخل
+
+يشاهد
+
+يصوم
+
+يكتب
+
+يجلس
+
+يقيم
+
+يعلم
+
+وضع
+
+نظر
+
+فتح
+
+علم
+
+سلم
+
+كره
+
+حسن
+
+سهل
+
+اكتب
+
+اخلص
+
+افتج
+
+كتب
+
+فعل
+
+جلس
+
+- fiil madhi
+- fiil amr
