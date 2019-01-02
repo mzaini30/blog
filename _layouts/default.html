@@ -5,8 +5,29 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{{ site.url }}/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ site.url }}/app/style.css">
 </head>
 <body>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			    </button>
+				<a href="{{ site.url }}" class="navbar-brand top ellipsis">Zen</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li><a href="#!">Tes</a></li>
+		      </ul>
+		    </div>
+		</div>
+	</div>
 	{{ content }}
+	<script type="text/javascript" src="{{ site.url }}/vendor/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ site.url }}/vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
