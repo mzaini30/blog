@@ -7,7 +7,7 @@ title: Zen
 	{% for x in paginator.posts %}
 		<a href="{{ site.url }}{{ x.url }}" class="list-group-item">
 			{{ x.title }}
-			<span class="badge">{{ x.date | date: "%d &bull; %m &bull; %y" }}</span>
+			<!-- <span class="badge">{{ x.date | date: "%d &bull; %m &bull; %y" }}</span> -->
 		</a>
 	{% endfor %}
 </div>

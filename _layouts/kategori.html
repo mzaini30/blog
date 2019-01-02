@@ -8,7 +8,7 @@ layout: default
 		{% if x.category == page.title %}
 			<a href="{{ site.url }}{{ x.url }}" class="list-group-item">
 				{{ x.title }}
-				<span class="badge">{{ x.date | date: "%d &bull; %m &bull; %y" }}</span>
+				<!-- <span class="badge">{{ x.date | date: "%d &bull; %m &bull; %y" }}</span> -->
 			</a>
 		{% endif %}
 	{% endfor %}
