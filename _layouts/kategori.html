@@ -7,3 +7,9 @@ layout: post
 		display: none;
 	}
 </style>
+
+<div class="list-group">
+	{% for x in paginator.posts %}
+		<a href="{{ site.url }}{{ x.url }}" class="list-group-item">{{ x.title }}</a>
+	{% endfor %}
+</div>

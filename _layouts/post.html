@@ -2,9 +2,20 @@
 layout: default
 ---
 
+<style type="text/css">
+	body {
+		padding-top: 50px;
+	}
+</style>
+
 <div class="medium">
-	<h1 class="judul">{{ page.title }}</h1>
+	<div class="judul">
+		<center>
+			<p><em>{{ page.title }}</em></p>
+		</center>
+		<hr>
+	</div>
 	{{ content }}
-	<br>
+	<hr>
 	{% include disqus.html %}
 </div>
