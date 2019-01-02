@@ -6,4 +6,4 @@ Dalam menjalani kehidupan sehari-hari, kadang kita nggak fokus sehingga segala t
 
 Oke, itu nggak bagus.
 
-Mengapa?
+So, ayo deh kita fokus dalam melakukan segala hal.
