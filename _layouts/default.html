@@ -2,10 +2,19 @@
 <html>
 <head>
 	{% include iklan-otomatis.html %}
-	<title>Zen</title>
+	<title>
+		{% if page.date %}
+			{{ page.title }}
+		{% else %}
+			Zen
+		{% endif %}
+	</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{{ site.url }}/vendor/bootstrap/css/bootstrap.min.css">
+	{% if page.date %}
+		<link rel="stylesheet" type="text/css" href="{{ site.url }}/vendor/medium/medium.css">
+	{% endif %}
 	<link rel="stylesheet" type="text/css" href="{{ site.url }}/app/style.css">
 </head>
 <body>
@@ -18,7 +27,13 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			    </button>
-				<a href="{{ site.url }}" class="navbar-brand top ellipsis">Zen</a>
+				<a href="{{ site.url }}" class="navbar-brand top ellipsis">
+					{% if page.date %}
+						{{ page.title }}
+					{% else %}
+						Zen
+					{% endif %}
+				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav">
@@ -30,7 +45,10 @@
 		    </div>
 		</div>
 	</div>
-	{{ content }}
+	<div class="container">
+		{{ content }}
+	</div>
+	<br>
 	<script type="text/javascript" src="{{ site.url }}/vendor/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="{{ site.url }}/vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>

@@ -2,6 +2,9 @@
 layout: default
 ---
 
-{{ content }}
-
-{% include disqus.html %}
+<div class="medium">
+	<h1>{{ page.title }}</h1>
+	{{ content }}
+	<br>
+	{% include disqus.html %}
+</div>
