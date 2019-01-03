@@ -10,4 +10,4 @@ Untuk judul bukunya ada banyak. Kalau yang lagi kubaca sekarang: كفاية ال
 
 *Mengapa Penting Banget Membaca Buku?*
 
-Kita ni hidup memikiki batas waktu ya. Juga, memiliki berbagai kewajiban yang harus dipenuhi. Kita harus bekerja
+Kita ni hidup memikiki batas waktu ya. Juga, memiliki berbagai kewajiban yang harus dipenuhi. Kita harus bekerja supaya kebutuhan kita terpenuhi. Namun, ketika kita memiliki ilmu, tentu saja uang yang kita miliki tidak hanya untuk memenuhi kebutuhan kita saja namun juga untuk membantu orang lain yang kesusahan. Nah, pengetahuan itu kita dapatkan dari membaca buku.'
